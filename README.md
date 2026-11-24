@@ -78,19 +78,4 @@ Optional den Browserpfad über `BROWSER_BIN` festlegen. Zum Prüfen des geschüt
 
 Firebase-Hosting ist optional. `frontend/firebase.json` enthält die SPA-Weiterleitung. Wer Firebase nutzt, kopiert `frontend/.firebaserc.example` nach `frontend/.firebaserc` und trägt die eigene Projekt-ID ein. Eine bestehende Hosting-Zuordnung wird nicht mitgeliefert.
 
-## Mit Git weiterarbeiten
 
-`party-game` ist der einzige Projektordner. Änderungen vor dem Hochladen prüfen:
-
-```sh
-npm run check
-git add .
-git commit -m "Beschreibung der Änderung"
-git push
-```
-
-Beim erstmaligen Hochladen ein leeres GitHub-Repository anlegen und `git push -u origin main` verwenden. Die in `origin` hinterlegte URL muss auf dein eigenes Repository zeigen.
-
-`node_modules`, Build-Ausgaben, lokale `.env`-Dateien, Firebase-Cache, die persönliche Firebase-Projektzuordnung und Browserartefakte sind ausgeschlossen. Beispielkonfigurationen und Paket-Lockdateien gehören dagegen ins Repository. Die ignorierten Dateien bleiben lokal verfügbar; neue Mitwirkende installieren Pakete mit `npm ci` und richten ihre eigene Konfiguration anhand der Beispieldateien ein.
-
-Es wurde keine neue Lizenz für den Quellcode festgelegt. Hinweise zu den unverändert übernommenen Bilddateien stehen in [ASSETS.md](ASSETS.md).
