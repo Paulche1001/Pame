@@ -1,0 +1,9 @@
+[
+    { "id": "schaetz", "question": "Wie viele Songs können in eine Spotify-Playlist?", "answer": 10000 },
+    { "id": "schaetz", "question": "Wie viele Inseln hat Deutschland?", "answer": 77 },
+    { "id": "schaetz", "question": "Wie lange ist die Pfrimm? (in Km)", "answer": 42.7 },
+    { "id": "schaetz", "question": "Wie weit ist es Worms nach Rom? (Luftlinie in Km)", "answer": 922.65 },
+    { "id": "schaetz", "question": "Wie viele Trauben braucht man für eine Flasche Wein (0,75l)?", "answer": 850 },
+    { "id": "schaetz", "question": "Seit wann gibt es das Backfischfest?", "answer": 1933 },
+    { "id": "schaetz", "question": "Wie lange braucht Licht von der Sonne zur Erde? (in Sekunden)", "answer": 499 }
+]

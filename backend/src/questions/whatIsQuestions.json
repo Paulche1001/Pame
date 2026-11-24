@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "quest": "Was bedeutet das Wort Himalaja übersetzt?",
+        "answer": "Wo der schnee wohnt"
+    },
+    {
+        "id": 2,
+        "quest": "Welche Außergewöhnliche eigenheit haben Schnecken beim Liebesspiel?",
+        "answer": "Sie küssen sich vorher"
+    },
+    {
+        "id": 3,
+        "quest": "Was ist ein Gladius?",
+        "answer": "Ein kurzes römisches Schwert"
+    },
+    {
+        "id": 4,
+        "quest": "Wofür hält eine Lehrerin aus Nordirland den Weltrekord?",
+        "answer": "Für die lauteste Stimme der Welt"
+    },
+    {
+        "id": 5,
+        "quest": "HTTP ist die Abkürzung von?",
+        "answer": "Hypertext Transfer Protocol"
+    },
+    {
+        "id": 6,
+        "quest": "Was ist die Landessprache in Tansania?",
+        "answer": "Kiswahili"
+    },
+    {
+        "id": 7,
+        "quest": "Wo treten Race Condition auf?",
+        "answer": "Bei Fehlern in der Informatik"
+    }
+]

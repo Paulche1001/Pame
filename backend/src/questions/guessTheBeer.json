@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "title": "Corona",
+        "hints": [
+        "Leichtes Lager, oft im Sommer",
+        "Lateinamerika",
+        "Viele trinken es mit Limette im Flaschenhals",
+        "Mexikanisches Bier mit dem Namen wie „Krone“"
+        ]
+    },{
+    "id": 2,
+    "title": "Beck's",
+    "hints": [
+      "Ein sehr bekanntes deutsches Pils",
+      "Kommt aus Norddeutschland",
+      "Auf dem Etikett ist oft ein Schlüssel zu sehen",
+      "Wird in Bremen gebraut"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Heineken",
+    "hints": [
+      "Internationales Lager, sehr weit verbreitet",
+      "Kommt aus Westeuropa",
+      "Grüne Flasche, roter Stern auf dem Logo",
+      "Eine der bekanntesten Marken aus den Niederlanden"
+    ]
+  },{
+    "id": 4,
+    "title": "Guinness",
+    "hints": [
+        "Bekannt für Nitro-Zapfung und samtige Textur",
+        "Kommt von einer Inselnation in Europa",
+        "Dunkel, cremiger Schaum",
+        "Irisches Stout aus Dublin"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Paulaner Münchner Hell",
+    "hints": [
+      "Helles Lager",
+      "Süddeutschland",
+      "Süddeutschland",
+      "Oft im Biergarten, sehr „Münchner“ Auftreten"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Erdinger Weißbier",
+    "hints": [
+      "Weizenbier",
+      "Bayern",
+      "Blau-weißes Etikett, häufig 0,5l-Flasche",
+      "Kommt aus Erding"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Krombacher Pils",
+    "hints": [
+      "Pils, sehr bekannt in Deutschland",
+      "Kommt aus Westdeutschland",
+      "Werbung oft mit Natur/Seen verbunden",
+      "Brauerei aus dem Sauerland"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Jever",
+    "hints": [
+      "Pils mit deutlich herbem Geschmack",
+      "Norddeutschland",
+      "Wird oft als „herb“ beworben",
+      "Kommt aus Friesland"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Rothaus Tannenzäpfle",
+    "hints": [
+      "Pils, eher Kult-Charakter",
+      "Südwestdeutschland",
+      "Kleines Fläschchen, sehr markantes Etikett",
+      "Aus dem Schwarzwald"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Franziskaner Weißbier",
+    "hints": [
+      "Weizenbier",
+      "Bayern",
+      "Logo erinnert an einen Mönch",
+      "Weißbier aus München"
+    ]
+  },{
+    "id": 11,
+    "title": "Eichbaum Ureich",
+    "hints": [
+        "Ein malziges, eher kerniges Bier",
+        "Kommt aus Deutschland",
+        "Die Marke ist besonders im Rhein-Neckar-Raum bekannt",
+        "Kommt aus Mannheim"
+    ]
+    },
+  {
+    "id": 12,
+    "title": "Sander Plan B Alkoholfreies Pils",
+    "hints": [
+      "Ein Bier ohne Alkohol",
+      "Geschmacklich in Richtung Pils",
+      "Der Name klingt nach „Alternative“",
+      "Kommt aus Worms"
+    ]
+  }
+]

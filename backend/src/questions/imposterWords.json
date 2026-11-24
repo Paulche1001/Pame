@@ -1,0 +1,2492 @@
+[
+  {
+    "id": 1,
+    "word": "Osterhase",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 2,
+    "word": "Weihnachtsbaum",
+    "help": "zuhause"
+  },
+  {
+    "id": 3,
+    "word": "Schneemann",
+    "help": "täglich"
+  },
+  {
+    "id": 4,
+    "word": "Sonnenbrille",
+    "help": "zuhause"
+  },
+  {
+    "id": 5,
+    "word": "Regenschirm",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 6,
+    "word": "Zahnbürste",
+    "help": "Routine"
+  },
+  {
+    "id": 7,
+    "word": "Kühlschrank",
+    "help": "Routine"
+  },
+  {
+    "id": 8,
+    "word": "Fernbedienung",
+    "help": "unterwegs"
+  },
+  {
+    "id": 9,
+    "word": "Fahrrad",
+    "help": "täglich"
+  },
+  {
+    "id": 10,
+    "word": "Auto",
+    "help": "praktisch"
+  },
+  {
+    "id": 11,
+    "word": "Flugzeug",
+    "help": "praktisch"
+  },
+  {
+    "id": 12,
+    "word": "Zug",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 13,
+    "word": "Bus",
+    "help": "bekannt"
+  },
+  {
+    "id": 14,
+    "word": "Schiff",
+    "help": "zuhause"
+  },
+  {
+    "id": 15,
+    "word": "Rakete",
+    "help": "unterwegs"
+  },
+  {
+    "id": 16,
+    "word": "Pizza",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 17,
+    "word": "Hamburger",
+    "help": "Routine"
+  },
+  {
+    "id": 18,
+    "word": "Pommes",
+    "help": "praktisch"
+  },
+  {
+    "id": 19,
+    "word": "Spaghetti",
+    "help": "praktisch"
+  },
+  {
+    "id": 20,
+    "word": "Apfel",
+    "help": "täglich"
+  },
+  {
+    "id": 21,
+    "word": "Banane",
+    "help": "Routine"
+  },
+  {
+    "id": 22,
+    "word": "Erdbeere",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 23,
+    "word": "Wassermelone",
+    "help": "Routine"
+  },
+  {
+    "id": 24,
+    "word": "Schokolade",
+    "help": "Routine"
+  },
+  {
+    "id": 25,
+    "word": "Kuchen",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 26,
+    "word": "Eis",
+    "help": "praktisch"
+  },
+  {
+    "id": 27,
+    "word": "Kaffee",
+    "help": "bekannt"
+  },
+  {
+    "id": 28,
+    "word": "Tee",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 29,
+    "word": "Wasser",
+    "help": "Routine"
+  },
+  {
+    "id": 30,
+    "word": "Limo",
+    "help": "praktisch"
+  },
+  {
+    "id": 31,
+    "word": "Hund",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 32,
+    "word": "Katze",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 33,
+    "word": "Pferd",
+    "help": "praktisch"
+  },
+  {
+    "id": 34,
+    "word": "Kuh",
+    "help": "täglich"
+  },
+  {
+    "id": 35,
+    "word": "Schaf",
+    "help": "Routine"
+  },
+  {
+    "id": 36,
+    "word": "Schwein",
+    "help": "praktisch"
+  },
+  {
+    "id": 37,
+    "word": "Huhn",
+    "help": "zuhause"
+  },
+  {
+    "id": 38,
+    "word": "Fisch",
+    "help": "Routine"
+  },
+  {
+    "id": 39,
+    "word": "Elefant",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 40,
+    "word": "Löwe",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 41,
+    "word": "Tiger",
+    "help": "zuhause"
+  },
+  {
+    "id": 42,
+    "word": "Affe",
+    "help": "bekannt"
+  },
+  {
+    "id": 43,
+    "word": "Giraffe",
+    "help": "unterwegs"
+  },
+  {
+    "id": 44,
+    "word": "Pinguin",
+    "help": "bekannt"
+  },
+  {
+    "id": 45,
+    "word": "Delfin",
+    "help": "bekannt"
+  },
+  {
+    "id": 46,
+    "word": "Hai",
+    "help": "bekannt"
+  },
+  {
+    "id": 47,
+    "word": "Biene",
+    "help": "zuhause"
+  },
+  {
+    "id": 48,
+    "word": "Schmetterling",
+    "help": "praktisch"
+  },
+  {
+    "id": 49,
+    "word": "Spinne",
+    "help": "Routine"
+  },
+  {
+    "id": 50,
+    "word": "Frosch",
+    "help": "Routine"
+  },
+  {
+    "id": 51,
+    "word": "Schule",
+    "help": "unterwegs"
+  },
+  {
+    "id": 52,
+    "word": "Lehrer",
+    "help": "bekannt"
+  },
+  {
+    "id": 53,
+    "word": "Buch",
+    "help": "bekannt"
+  },
+  {
+    "id": 54,
+    "word": "Stift",
+    "help": "bekannt"
+  },
+  {
+    "id": 55,
+    "word": "Tafel",
+    "help": "unterwegs"
+  },
+  {
+    "id": 56,
+    "word": "Rucksack",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 57,
+    "word": "Hausaufgaben",
+    "help": "bekannt"
+  },
+  {
+    "id": 58,
+    "word": "Prüfung",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 59,
+    "word": "Zeugnis",
+    "help": "Routine"
+  },
+  {
+    "id": 60,
+    "word": "Pause",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 61,
+    "word": "Ball",
+    "help": "zuhause"
+  },
+  {
+    "id": 62,
+    "word": "Fußball",
+    "help": "Routine"
+  },
+  {
+    "id": 63,
+    "word": "Basketball",
+    "help": "Routine"
+  },
+  {
+    "id": 64,
+    "word": "Tennis",
+    "help": "praktisch"
+  },
+  {
+    "id": 65,
+    "word": "Schwimmen",
+    "help": "zuhause"
+  },
+  {
+    "id": 66,
+    "word": "Joggen",
+    "help": "bekannt"
+  },
+  {
+    "id": 67,
+    "word": "Skifahren",
+    "help": "zuhause"
+  },
+  {
+    "id": 68,
+    "word": "Klettern",
+    "help": "praktisch"
+  },
+  {
+    "id": 69,
+    "word": "Camping",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 70,
+    "word": "Angeln",
+    "help": "Routine"
+  },
+  {
+    "id": 71,
+    "word": "Handy",
+    "help": "unterwegs"
+  },
+  {
+    "id": 72,
+    "word": "Laptop",
+    "help": "täglich"
+  },
+  {
+    "id": 73,
+    "word": "Kopfhörer",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 74,
+    "word": "Maus",
+    "help": "lautlos"
+  },
+  {
+    "id": 75,
+    "word": "Tastatur",
+    "help": "täglich"
+  },
+  {
+    "id": 76,
+    "word": "Monitor",
+    "help": "täglich"
+  },
+  {
+    "id": 77,
+    "word": "Ladekabel",
+    "help": "Routine"
+  },
+  {
+    "id": 78,
+    "word": "Internet",
+    "help": "praktisch"
+  },
+  {
+    "id": 79,
+    "word": "Passwort",
+    "help": "zuhause"
+  },
+  {
+    "id": 80,
+    "word": "Kamera",
+    "help": "praktisch"
+  },
+  {
+    "id": 81,
+    "word": "Bett",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 82,
+    "word": "Kissen",
+    "help": "Routine"
+  },
+  {
+    "id": 83,
+    "word": "Decke",
+    "help": "unterwegs"
+  },
+  {
+    "id": 84,
+    "word": "Lampe",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 85,
+    "word": "Fenster",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 86,
+    "word": "Tür",
+    "help": "bekannt"
+  },
+  {
+    "id": 87,
+    "word": "Schlüssel",
+    "help": "Routine"
+  },
+  {
+    "id": 88,
+    "word": "Stuhl",
+    "help": "täglich"
+  },
+  {
+    "id": 89,
+    "word": "Tisch",
+    "help": "zuhause"
+  },
+  {
+    "id": 90,
+    "word": "Sofa",
+    "help": "praktisch"
+  },
+  {
+    "id": 91,
+    "word": "Arzt",
+    "help": "praktisch"
+  },
+  {
+    "id": 92,
+    "word": "Krankenhaus",
+    "help": "zuhause"
+  },
+  {
+    "id": 93,
+    "word": "Medikament",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 94,
+    "word": "Pflaster",
+    "help": "praktisch"
+  },
+  {
+    "id": 95,
+    "word": "Fieber",
+    "help": "Routine"
+  },
+  {
+    "id": 96,
+    "word": "Husten",
+    "help": "gewöhnlich"
+  },
+  {
+    "id": 97,
+    "word": "Sonne",
+    "help": "zuhause"
+  },
+  {
+    "id": 98,
+    "word": "Mond",
+    "help": "oft benutzt"
+  },
+  {
+    "id": 99,
+    "word": "Stern",
+    "help": "unterwegs"
+  },
+  {
+    "id": 100,
+    "word": "Wolke",
+    "help": "bekannt"
+  },
+  {
+    "id": 101,
+    "word": "Gabel",
+    "help": "am Tisch"
+  },
+  {
+    "id": 102,
+    "word": "Löffel",
+    "help": "in der Küche"
+  },
+  {
+    "id": 103,
+    "word": "Messer",
+    "help": "in der Küche"
+  },
+  {
+    "id": 104,
+    "word": "Teller",
+    "help": "kochen"
+  },
+  {
+    "id": 105,
+    "word": "Tasse",
+    "help": "kochen"
+  },
+  {
+    "id": 106,
+    "word": "Glas",
+    "help": "in der Küche"
+  },
+  {
+    "id": 107,
+    "word": "Pfanne",
+    "help": "kochen"
+  },
+  {
+    "id": 108,
+    "word": "Topf",
+    "help": "essen"
+  },
+  {
+    "id": 109,
+    "word": "Backofen",
+    "help": "essen"
+  },
+  {
+    "id": 110,
+    "word": "Toaster",
+    "help": "warm"
+  },
+  {
+    "id": 111,
+    "word": "Mixer",
+    "help": "würzen"
+  },
+  {
+    "id": 112,
+    "word": "Schneidebrett",
+    "help": "Haushalt"
+  },
+  {
+    "id": 113,
+    "word": "Kochlöffel",
+    "help": "Haushalt"
+  },
+  {
+    "id": 114,
+    "word": "Sieb",
+    "help": "am Tisch"
+  },
+  {
+    "id": 115,
+    "word": "Schüssel",
+    "help": "essen"
+  },
+  {
+    "id": 116,
+    "word": "Thermoskanne",
+    "help": "in der Küche"
+  },
+  {
+    "id": 117,
+    "word": "Brotdose",
+    "help": "warm"
+  },
+  {
+    "id": 118,
+    "word": "Salzstreuer",
+    "help": "Haushalt"
+  },
+  {
+    "id": 119,
+    "word": "Pfeffermühle",
+    "help": "kochen"
+  },
+  {
+    "id": 120,
+    "word": "Küchenrolle",
+    "help": "am Tisch"
+  },
+  {
+    "id": 121,
+    "word": "Gefrierfach",
+    "help": "backen"
+  },
+  {
+    "id": 122,
+    "word": "Spülmaschine",
+    "help": "am Tisch"
+  },
+  {
+    "id": 123,
+    "word": "Mikrowelle",
+    "help": "am Tisch"
+  },
+  {
+    "id": 124,
+    "word": "Wasserkocher",
+    "help": "essen"
+  },
+  {
+    "id": 125,
+    "word": "Eierbecher",
+    "help": "backen"
+  },
+  {
+    "id": 126,
+    "word": "Serviette",
+    "help": "am Tisch"
+  },
+  {
+    "id": 127,
+    "word": "Untersetzer",
+    "help": "am Tisch"
+  },
+  {
+    "id": 128,
+    "word": "Korkenzieher",
+    "help": "essen"
+  },
+  {
+    "id": 129,
+    "word": "Dosenöffner",
+    "help": "kochen"
+  },
+  {
+    "id": 130,
+    "word": "Reibe",
+    "help": "in der Küche"
+  },
+  {
+    "id": 131,
+    "word": "Nudelholz",
+    "help": "würzen"
+  },
+  {
+    "id": 132,
+    "word": "Backblech",
+    "help": "in der Küche"
+  },
+  {
+    "id": 133,
+    "word": "Messbecher",
+    "help": "essen"
+  },
+  {
+    "id": 134,
+    "word": "Zucker",
+    "help": "Haushalt"
+  },
+  {
+    "id": 135,
+    "word": "Mehl",
+    "help": "backen"
+  },
+  {
+    "id": 136,
+    "word": "Milch",
+    "help": "würzen"
+  },
+  {
+    "id": 137,
+    "word": "Butter",
+    "help": "backen"
+  },
+  {
+    "id": 138,
+    "word": "Joghurt",
+    "help": "am Tisch"
+  },
+  {
+    "id": 139,
+    "word": "Käse",
+    "help": "in der Küche"
+  },
+  {
+    "id": 140,
+    "word": "Brot",
+    "help": "in der Küche"
+  },
+  {
+    "id": 141,
+    "word": "Wald",
+    "help": "draußen"
+  },
+  {
+    "id": 142,
+    "word": "Baum",
+    "help": "natürlich"
+  },
+  {
+    "id": 143,
+    "word": "Blatt",
+    "help": "weit"
+  },
+  {
+    "id": 144,
+    "word": "Blume",
+    "help": "natürlich"
+  },
+  {
+    "id": 145,
+    "word": "Wiese",
+    "help": "natürlich"
+  },
+  {
+    "id": 146,
+    "word": "Berg",
+    "help": "draußen"
+  },
+  {
+    "id": 147,
+    "word": "Tal",
+    "help": "grün"
+  },
+  {
+    "id": 148,
+    "word": "Fluss",
+    "help": "natürlich"
+  },
+  {
+    "id": 149,
+    "word": "See",
+    "help": "natürlich"
+  },
+  {
+    "id": 150,
+    "word": "Meer",
+    "help": "grün"
+  },
+  {
+    "id": 151,
+    "word": "Insel",
+    "help": "Landschaft"
+  },
+  {
+    "id": 152,
+    "word": "Vulkan",
+    "help": "grün"
+  },
+  {
+    "id": 153,
+    "word": "Wasserfall",
+    "help": "ruhig"
+  },
+  {
+    "id": 154,
+    "word": "Regenbogen",
+    "help": "ruhig"
+  },
+  {
+    "id": 155,
+    "word": "Gewitter",
+    "help": "Landschaft"
+  },
+  {
+    "id": 156,
+    "word": "Blitz",
+    "help": "natürlich"
+  },
+  {
+    "id": 157,
+    "word": "Donner",
+    "help": "im Freien"
+  },
+  {
+    "id": 158,
+    "word": "Nebel",
+    "help": "im Freien"
+  },
+  {
+    "id": 159,
+    "word": "Tau",
+    "help": "Wetter"
+  },
+  {
+    "id": 160,
+    "word": "Sand",
+    "help": "im Freien"
+  },
+  {
+    "id": 161,
+    "word": "Stein",
+    "help": "Landschaft"
+  },
+  {
+    "id": 162,
+    "word": "Fels",
+    "help": "Wetter"
+  },
+  {
+    "id": 163,
+    "word": "Moos",
+    "help": "im Freien"
+  },
+  {
+    "id": 164,
+    "word": "Pilz",
+    "help": "weit"
+  },
+  {
+    "id": 165,
+    "word": "Eichel",
+    "help": "Wetter"
+  },
+  {
+    "id": 166,
+    "word": "Tanne",
+    "help": "im Freien"
+  },
+  {
+    "id": 167,
+    "word": "Kaktus",
+    "help": "Landschaft"
+  },
+  {
+    "id": 168,
+    "word": "Palme",
+    "help": "weit"
+  },
+  {
+    "id": 169,
+    "word": "Rose",
+    "help": "grün"
+  },
+  {
+    "id": 170,
+    "word": "Tulpe",
+    "help": "Wetter"
+  },
+  {
+    "id": 171,
+    "word": "Sonnenblume",
+    "help": "im Freien"
+  },
+  {
+    "id": 172,
+    "word": "Lavendel",
+    "help": "Landschaft"
+  },
+  {
+    "id": 173,
+    "word": "Bambus",
+    "help": "Wetter"
+  },
+  {
+    "id": 174,
+    "word": "Schneeflocke",
+    "help": "Wetter"
+  },
+  {
+    "id": 175,
+    "word": "Eisberg",
+    "help": "grün"
+  },
+  {
+    "id": 176,
+    "word": "Gletscher",
+    "help": "grün"
+  },
+  {
+    "id": 177,
+    "word": "Düne",
+    "help": "Landschaft"
+  },
+  {
+    "id": 178,
+    "word": "Koralle",
+    "help": "Wetter"
+  },
+  {
+    "id": 179,
+    "word": "Lagune",
+    "help": "ruhig"
+  },
+  {
+    "id": 180,
+    "word": "Sumpf",
+    "help": "Landschaft"
+  },
+  {
+    "id": 181,
+    "word": "Igel",
+    "help": "Natur"
+  },
+  {
+    "id": 182,
+    "word": "Hase",
+    "help": "Natur"
+  },
+  {
+    "id": 183,
+    "word": "Marder",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 184,
+    "word": "Waschbär",
+    "help": "lautlos"
+  },
+  {
+    "id": 185,
+    "word": "Fuchs",
+    "help": "Natur"
+  },
+  {
+    "id": 186,
+    "word": "Wolf",
+    "help": "lebendig"
+  },
+  {
+    "id": 187,
+    "word": "Bär",
+    "help": "lebendig"
+  },
+  {
+    "id": 188,
+    "word": "Reh",
+    "help": "fellig"
+  },
+  {
+    "id": 189,
+    "word": "Hirsch",
+    "help": "Natur"
+  },
+  {
+    "id": 190,
+    "word": "Otter",
+    "help": "lautlos"
+  },
+  {
+    "id": 191,
+    "word": "Dachs",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 192,
+    "word": "Ratte",
+    "help": "lebendig"
+  },
+  {
+    "id": 193,
+    "word": "Hamster",
+    "help": "wild"
+  },
+  {
+    "id": 194,
+    "word": "Meerschweinchen",
+    "help": "lebendig"
+  },
+  {
+    "id": 195,
+    "word": "Kaninchen",
+    "help": "fellig"
+  },
+  {
+    "id": 196,
+    "word": "Panda",
+    "help": "wild"
+  },
+  {
+    "id": 197,
+    "word": "Koala",
+    "help": "lebendig"
+  },
+  {
+    "id": 198,
+    "word": "Känguru",
+    "help": "lebendig"
+  },
+  {
+    "id": 199,
+    "word": "Zebra",
+    "help": "wild"
+  },
+  {
+    "id": 200,
+    "word": "Nilpferd",
+    "help": "wild"
+  },
+  {
+    "id": 201,
+    "word": "Nashorn",
+    "help": "Natur"
+  },
+  {
+    "id": 202,
+    "word": "Krokodil",
+    "help": "fellig"
+  },
+  {
+    "id": 203,
+    "word": "Schildkröte",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 204,
+    "word": "Eidechse",
+    "help": "Bewegung"
+  },
+  {
+    "id": 205,
+    "word": "Schlange",
+    "help": "flink"
+  },
+  {
+    "id": 206,
+    "word": "Gecko",
+    "help": "Natur"
+  },
+  {
+    "id": 207,
+    "word": "Chamäleon",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 208,
+    "word": "Papagei",
+    "help": "fellig"
+  },
+  {
+    "id": 209,
+    "word": "Eule",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 210,
+    "word": "Adler",
+    "help": "lebendig"
+  },
+  {
+    "id": 211,
+    "word": "Falke",
+    "help": "Tierwelt"
+  },
+  {
+    "id": 212,
+    "word": "Spatz",
+    "help": "Bewegung"
+  },
+  {
+    "id": 213,
+    "word": "Amsel",
+    "help": "Bewegung"
+  },
+  {
+    "id": 214,
+    "word": "Ente",
+    "help": "wild"
+  },
+  {
+    "id": 215,
+    "word": "Gans",
+    "help": "Natur"
+  },
+  {
+    "id": 216,
+    "word": "Schwan",
+    "help": "wild"
+  },
+  {
+    "id": 217,
+    "word": "Pfau",
+    "help": "wild"
+  },
+  {
+    "id": 218,
+    "word": "Flamingo",
+    "help": "flink"
+  },
+  {
+    "id": 219,
+    "word": "Möwe",
+    "help": "fellig"
+  },
+  {
+    "id": 220,
+    "word": "Jacke",
+    "help": "wärmend"
+  },
+  {
+    "id": 221,
+    "word": "Mantel",
+    "help": "Mode"
+  },
+  {
+    "id": 222,
+    "word": "Pullover",
+    "help": "Mode"
+  },
+  {
+    "id": 223,
+    "word": "T-Shirt",
+    "help": "am Körper"
+  },
+  {
+    "id": 224,
+    "word": "Hemd",
+    "help": "wärmend"
+  },
+  {
+    "id": 225,
+    "word": "Bluse",
+    "help": "am Körper"
+  },
+  {
+    "id": 226,
+    "word": "Jeans",
+    "help": "Mode"
+  },
+  {
+    "id": 227,
+    "word": "Hose",
+    "help": "kombinierbar"
+  },
+  {
+    "id": 228,
+    "word": "Rock",
+    "help": "kombinierbar"
+  },
+  {
+    "id": 229,
+    "word": "Kleid",
+    "help": "Mode"
+  },
+  {
+    "id": 230,
+    "word": "Mütze",
+    "help": "tragen"
+  },
+  {
+    "id": 231,
+    "word": "Schal",
+    "help": "am Körper"
+  },
+  {
+    "id": 232,
+    "word": "Handschuh",
+    "help": "wärmend"
+  },
+  {
+    "id": 233,
+    "word": "Socken",
+    "help": "am Körper"
+  },
+  {
+    "id": 234,
+    "word": "Schuhe",
+    "help": "anziehen"
+  },
+  {
+    "id": 235,
+    "word": "Stiefel",
+    "help": "tragen"
+  },
+  {
+    "id": 236,
+    "word": "Sneaker",
+    "help": "Mode"
+  },
+  {
+    "id": 237,
+    "word": "Sandalen",
+    "help": "wärmend"
+  },
+  {
+    "id": 238,
+    "word": "Gürtel",
+    "help": "Stoff"
+  },
+  {
+    "id": 239,
+    "word": "Knopf",
+    "help": "wärmend"
+  },
+  {
+    "id": 240,
+    "word": "Reißverschluss",
+    "help": "Mode"
+  },
+  {
+    "id": 241,
+    "word": "Tasche",
+    "help": "anziehen"
+  },
+  {
+    "id": 242,
+    "word": "Rucksacktasche",
+    "help": "kombinierbar"
+  },
+  {
+    "id": 243,
+    "word": "Armband",
+    "help": "Alltag"
+  },
+  {
+    "id": 244,
+    "word": "Halskette",
+    "help": "Alltag"
+  },
+  {
+    "id": 245,
+    "word": "Ohrring",
+    "help": "Mode"
+  },
+  {
+    "id": 246,
+    "word": "Brille",
+    "help": "Stoff"
+  },
+  {
+    "id": 247,
+    "word": "Regencape",
+    "help": "Stoff"
+  },
+  {
+    "id": 248,
+    "word": "Badehose",
+    "help": "am Körper"
+  },
+  {
+    "id": 249,
+    "word": "Bikini",
+    "help": "wärmend"
+  },
+  {
+    "id": 250,
+    "word": "Pyjama",
+    "help": "Stoff"
+  },
+  {
+    "id": 251,
+    "word": "Hausschuh",
+    "help": "tragen"
+  },
+  {
+    "id": 252,
+    "word": "Krawatte",
+    "help": "am Körper"
+  },
+  {
+    "id": 253,
+    "word": "Anzug",
+    "help": "Alltag"
+  },
+  {
+    "id": 254,
+    "word": "Schürze",
+    "help": "am Körper"
+  },
+  {
+    "id": 255,
+    "word": "Wollmütze",
+    "help": "Stoff"
+  },
+  {
+    "id": 256,
+    "word": "Sonnenhut",
+    "help": "Stoff"
+  },
+  {
+    "id": 257,
+    "word": "Stirnband",
+    "help": "Alltag"
+  },
+  {
+    "id": 258,
+    "word": "Umhang",
+    "help": "anziehen"
+  },
+  {
+    "id": 259,
+    "word": "Poncho",
+    "help": "kombinierbar"
+  },
+  {
+    "id": 260,
+    "word": "Heft",
+    "help": "Arbeit"
+  },
+  {
+    "id": 261,
+    "word": "Ordner",
+    "help": "Ordnung"
+  },
+  {
+    "id": 262,
+    "word": "Mappe",
+    "help": "am Tisch"
+  },
+  {
+    "id": 263,
+    "word": "Lineal",
+    "help": "Unterricht"
+  },
+  {
+    "id": 264,
+    "word": "Radiergummi",
+    "help": "Papier"
+  },
+  {
+    "id": 265,
+    "word": "Bleistift",
+    "help": "Papier"
+  },
+  {
+    "id": 266,
+    "word": "Kugelschreiber",
+    "help": "Arbeit"
+  },
+  {
+    "id": 267,
+    "word": "Marker",
+    "help": "Ordnung"
+  },
+  {
+    "id": 268,
+    "word": "Textmarker",
+    "help": "Arbeit"
+  },
+  {
+    "id": 269,
+    "word": "Spitzer",
+    "help": "schreiben"
+  },
+  {
+    "id": 270,
+    "word": "Kalender",
+    "help": "Papier"
+  },
+  {
+    "id": 271,
+    "word": "Notizbuch",
+    "help": "Papier"
+  },
+  {
+    "id": 272,
+    "word": "Papier",
+    "help": "schreiben"
+  },
+  {
+    "id": 273,
+    "word": "Briefumschlag",
+    "help": "Denken"
+  },
+  {
+    "id": 274,
+    "word": "Locher",
+    "help": "Unterricht"
+  },
+  {
+    "id": 275,
+    "word": "Tacker",
+    "help": "Ordnung"
+  },
+  {
+    "id": 276,
+    "word": "Schere",
+    "help": "Ordnung"
+  },
+  {
+    "id": 277,
+    "word": "Kleber",
+    "help": "Unterricht"
+  },
+  {
+    "id": 278,
+    "word": "Whiteboard",
+    "help": "schreiben"
+  },
+  {
+    "id": 279,
+    "word": "Flipchart",
+    "help": "Unterricht"
+  },
+  {
+    "id": 280,
+    "word": "Projektor",
+    "help": "lernen"
+  },
+  {
+    "id": 281,
+    "word": "Aktenkoffer",
+    "help": "lernen"
+  },
+  {
+    "id": 282,
+    "word": "Bürostuhl",
+    "help": "Arbeit"
+  },
+  {
+    "id": 283,
+    "word": "Schreibtisch",
+    "help": "am Tisch"
+  },
+  {
+    "id": 284,
+    "word": "Drucker",
+    "help": "lernen"
+  },
+  {
+    "id": 285,
+    "word": "Scanner",
+    "help": "Ordnung"
+  },
+  {
+    "id": 286,
+    "word": "Ordnung",
+    "help": "Unterricht"
+  },
+  {
+    "id": 287,
+    "word": "Stundenplan",
+    "help": "Denken"
+  },
+  {
+    "id": 288,
+    "word": "Pausehof",
+    "help": "am Tisch"
+  },
+  {
+    "id": 289,
+    "word": "Klassenraum",
+    "help": "Papier"
+  },
+  {
+    "id": 290,
+    "word": "Bibliothek",
+    "help": "Unterricht"
+  },
+  {
+    "id": 291,
+    "word": "Lesezeichen",
+    "help": "Arbeit"
+  },
+  {
+    "id": 292,
+    "word": "Zirkel",
+    "help": "schreiben"
+  },
+  {
+    "id": 293,
+    "word": "Geodreieck",
+    "help": "Ordnung"
+  },
+  {
+    "id": 294,
+    "word": "Formel",
+    "help": "Unterricht"
+  },
+  {
+    "id": 295,
+    "word": "Aufsatz",
+    "help": "Papier"
+  },
+  {
+    "id": 296,
+    "word": "Referat",
+    "help": "schreiben"
+  },
+  {
+    "id": 297,
+    "word": "Taschenrechner",
+    "help": "Unterricht"
+  },
+  {
+    "id": 298,
+    "word": "Notenblatt",
+    "help": "am Tisch"
+  },
+  {
+    "id": 299,
+    "word": "Zeilenheft",
+    "help": "Papier"
+  },
+  {
+    "id": 300,
+    "word": "Volleyball",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 301,
+    "word": "Handball",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 302,
+    "word": "Badminton",
+    "help": "Team"
+  },
+  {
+    "id": 303,
+    "word": "Golf",
+    "help": "Bewegung"
+  },
+  {
+    "id": 304,
+    "word": "Boxen",
+    "help": "Team"
+  },
+  {
+    "id": 305,
+    "word": "Yoga",
+    "help": "Bewegung"
+  },
+  {
+    "id": 306,
+    "word": "Turnen",
+    "help": "Team"
+  },
+  {
+    "id": 307,
+    "word": "Rudern",
+    "help": "Bewegung"
+  },
+  {
+    "id": 308,
+    "word": "Surfen",
+    "help": "Tempo"
+  },
+  {
+    "id": 309,
+    "word": "Segeln",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 310,
+    "word": "Reiten",
+    "help": "Spiel"
+  },
+  {
+    "id": 311,
+    "word": "Eislaufen",
+    "help": "Team"
+  },
+  {
+    "id": 312,
+    "word": "Snowboard",
+    "help": "Spiel"
+  },
+  {
+    "id": 313,
+    "word": "Wandern",
+    "help": "Spiel"
+  },
+  {
+    "id": 314,
+    "word": "Rennen",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 315,
+    "word": "Marathon",
+    "help": "Training"
+  },
+  {
+    "id": 316,
+    "word": "Sprint",
+    "help": "Bewegung"
+  },
+  {
+    "id": 317,
+    "word": "Staffel",
+    "help": "aktiv"
+  },
+  {
+    "id": 318,
+    "word": "Trampolin",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 319,
+    "word": "Dart",
+    "help": "Tempo"
+  },
+  {
+    "id": 320,
+    "word": "Billard",
+    "help": "Training"
+  },
+  {
+    "id": 321,
+    "word": "Bowling",
+    "help": "Training"
+  },
+  {
+    "id": 322,
+    "word": "Minigolf",
+    "help": "aktiv"
+  },
+  {
+    "id": 323,
+    "word": "Karate",
+    "help": "Bewegung"
+  },
+  {
+    "id": 324,
+    "word": "Judo",
+    "help": "Training"
+  },
+  {
+    "id": 325,
+    "word": "Fechten",
+    "help": "aktiv"
+  },
+  {
+    "id": 326,
+    "word": "Tauchen",
+    "help": "Bewegung"
+  },
+  {
+    "id": 327,
+    "word": "Kanu",
+    "help": "Spiel"
+  },
+  {
+    "id": 328,
+    "word": "Kajak",
+    "help": "Training"
+  },
+  {
+    "id": 329,
+    "word": "Krafttraining",
+    "help": "Team"
+  },
+  {
+    "id": 330,
+    "word": "Liegestütze",
+    "help": "Team"
+  },
+  {
+    "id": 331,
+    "word": "Hantel",
+    "help": "Team"
+  },
+  {
+    "id": 332,
+    "word": "Medaille",
+    "help": "aktiv"
+  },
+  {
+    "id": 333,
+    "word": "Pokal",
+    "help": "Spiel"
+  },
+  {
+    "id": 334,
+    "word": "Schiedsrichter",
+    "help": "Team"
+  },
+  {
+    "id": 335,
+    "word": "Stadion",
+    "help": "Training"
+  },
+  {
+    "id": 336,
+    "word": "Tribüne",
+    "help": "Bewegung"
+  },
+  {
+    "id": 337,
+    "word": "Torwart",
+    "help": "Tempo"
+  },
+  {
+    "id": 338,
+    "word": "Schläger",
+    "help": "Team"
+  },
+  {
+    "id": 339,
+    "word": "Helm",
+    "help": "Ausdauer"
+  },
+  {
+    "id": 340,
+    "word": "Tablet",
+    "help": "modern"
+  },
+  {
+    "id": 341,
+    "word": "Smartwatch",
+    "help": "Netz"
+  },
+  {
+    "id": 342,
+    "word": "Fernseher",
+    "help": "Strom"
+  },
+  {
+    "id": 343,
+    "word": "Konsole",
+    "help": "Bildschirm"
+  },
+  {
+    "id": 344,
+    "word": "Joystick",
+    "help": "digital"
+  },
+  {
+    "id": 345,
+    "word": "Gamepad",
+    "help": "praktisch"
+  },
+  {
+    "id": 346,
+    "word": "Router",
+    "help": "verbunden"
+  },
+  {
+    "id": 347,
+    "word": "Modem",
+    "help": "Strom"
+  },
+  {
+    "id": 348,
+    "word": "Server",
+    "help": "praktisch"
+  },
+  {
+    "id": 349,
+    "word": "Cloud",
+    "help": "praktisch"
+  },
+  {
+    "id": 350,
+    "word": "Datei",
+    "help": "praktisch"
+  },
+  {
+    "id": 351,
+    "word": "Ordnerstruktur",
+    "help": "Netz"
+  },
+  {
+    "id": 352,
+    "word": "Bildschirm",
+    "help": "verbunden"
+  },
+  {
+    "id": 353,
+    "word": "Akku",
+    "help": "modern"
+  },
+  {
+    "id": 354,
+    "word": "Batterie",
+    "help": "digital"
+  },
+  {
+    "id": 355,
+    "word": "Steckdose",
+    "help": "Gerät"
+  },
+  {
+    "id": 356,
+    "word": "Verlängerungskabel",
+    "help": "Gerät"
+  },
+  {
+    "id": 357,
+    "word": "USB-Stick",
+    "help": "Gerät"
+  },
+  {
+    "id": 358,
+    "word": "Festplatte",
+    "help": "modern"
+  },
+  {
+    "id": 359,
+    "word": "SSD",
+    "help": "Strom"
+  },
+  {
+    "id": 360,
+    "word": "Prozessor",
+    "help": "praktisch"
+  },
+  {
+    "id": 361,
+    "word": "Mikrofon",
+    "help": "Gerät"
+  },
+  {
+    "id": 362,
+    "word": "Lautsprecher",
+    "help": "Strom"
+  },
+  {
+    "id": 363,
+    "word": "Beamer",
+    "help": "modern"
+  },
+  {
+    "id": 364,
+    "word": "Drohne",
+    "help": "digital"
+  },
+  {
+    "id": 365,
+    "word": "Roboter",
+    "help": "Gerät"
+  },
+  {
+    "id": 366,
+    "word": "Satellit",
+    "help": "Strom"
+  },
+  {
+    "id": 367,
+    "word": "Navigation",
+    "help": "digital"
+  },
+  {
+    "id": 368,
+    "word": "App",
+    "help": "verbunden"
+  },
+  {
+    "id": 369,
+    "word": "Software",
+    "help": "Bildschirm"
+  },
+  {
+    "id": 370,
+    "word": "Update",
+    "help": "Bildschirm"
+  },
+  {
+    "id": 371,
+    "word": "Download",
+    "help": "digital"
+  },
+  {
+    "id": 372,
+    "word": "Upload",
+    "help": "Gerät"
+  },
+  {
+    "id": 373,
+    "word": "Link",
+    "help": "Netz"
+  },
+  {
+    "id": 374,
+    "word": "Suchmaschine",
+    "help": "Bildschirm"
+  },
+  {
+    "id": 375,
+    "word": "Nachricht",
+    "help": "modern"
+  },
+  {
+    "id": 376,
+    "word": "Chat",
+    "help": "digital"
+  },
+  {
+    "id": 377,
+    "word": "Videokonferenz",
+    "help": "verbunden"
+  },
+  {
+    "id": 378,
+    "word": "Headset",
+    "help": "Netz"
+  },
+  {
+    "id": 379,
+    "word": "Touchscreen",
+    "help": "Bildschirm"
+  },
+  {
+    "id": 380,
+    "word": "Küche",
+    "help": "bequem"
+  },
+  {
+    "id": 381,
+    "word": "Badezimmer",
+    "help": "zuhause"
+  },
+  {
+    "id": 382,
+    "word": "Wohnzimmer",
+    "help": "zuhause"
+  },
+  {
+    "id": 383,
+    "word": "Schlafzimmer",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 384,
+    "word": "Keller",
+    "help": "bequem"
+  },
+  {
+    "id": 385,
+    "word": "Dachboden",
+    "help": "zuhause"
+  },
+  {
+    "id": 386,
+    "word": "Garage",
+    "help": "bequem"
+  },
+  {
+    "id": 387,
+    "word": "Balkon",
+    "help": "bequem"
+  },
+  {
+    "id": 388,
+    "word": "Terrasse",
+    "help": "Raum"
+  },
+  {
+    "id": 389,
+    "word": "Garten",
+    "help": "Raum"
+  },
+  {
+    "id": 390,
+    "word": "Zaun",
+    "help": "Haushalt"
+  },
+  {
+    "id": 391,
+    "word": "Treppe",
+    "help": "zuhause"
+  },
+  {
+    "id": 392,
+    "word": "Spiegel",
+    "help": "Raum"
+  },
+  {
+    "id": 393,
+    "word": "Waschbecken",
+    "help": "Haushalt"
+  },
+  {
+    "id": 394,
+    "word": "Dusche",
+    "help": "Alltag"
+  },
+  {
+    "id": 395,
+    "word": "Badewanne",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 396,
+    "word": "Toilette",
+    "help": "innen"
+  },
+  {
+    "id": 397,
+    "word": "Seife",
+    "help": "Alltag"
+  },
+  {
+    "id": 398,
+    "word": "Handtuch",
+    "help": "bequem"
+  },
+  {
+    "id": 399,
+    "word": "Waschmaschine",
+    "help": "Haushalt"
+  },
+  {
+    "id": 400,
+    "word": "Wäschekorb",
+    "help": "Alltag"
+  },
+  {
+    "id": 401,
+    "word": "Staubsauger",
+    "help": "Haushalt"
+  },
+  {
+    "id": 402,
+    "word": "Besen",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 403,
+    "word": "Mülleimer",
+    "help": "wohnen"
+  },
+  {
+    "id": 404,
+    "word": "Kerze",
+    "help": "Freizeit"
+  },
+  {
+    "id": 405,
+    "word": "Vorhang",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 406,
+    "word": "Teppich",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 407,
+    "word": "Bilderrahmen",
+    "help": "Einrichtung"
+  },
+  {
+    "id": 408,
+    "word": "Vase",
+    "help": "bequem"
+  },
+  {
+    "id": 409,
+    "word": "Blumentopf",
+    "help": "Alltag"
+  },
+  {
+    "id": 410,
+    "word": "Heizung",
+    "help": "innen"
+  },
+  {
+    "id": 411,
+    "word": "Steckdosenleiste",
+    "help": "Raum"
+  },
+  {
+    "id": 412,
+    "word": "Lichtschalter",
+    "help": "innen"
+  },
+  {
+    "id": 413,
+    "word": "Klingel",
+    "help": "Haushalt"
+  },
+  {
+    "id": 414,
+    "word": "Briefkasten",
+    "help": "Haushalt"
+  },
+  {
+    "id": 415,
+    "word": "Gießkanne",
+    "help": "Raum"
+  },
+  {
+    "id": 416,
+    "word": "Hängematte",
+    "help": "Raum"
+  },
+  {
+    "id": 417,
+    "word": "Wecker",
+    "help": "Raum"
+  },
+  {
+    "id": 418,
+    "word": "Kleiderhaken",
+    "help": "bequem"
+  },
+  {
+    "id": 419,
+    "word": "Kommode",
+    "help": "Alltag"
+  },
+  {
+    "id": 420,
+    "word": "Bäcker",
+    "help": "Aufgabe"
+  },
+  {
+    "id": 421,
+    "word": "Koch",
+    "help": "Alltag"
+  },
+  {
+    "id": 422,
+    "word": "Feuerwehr",
+    "help": "Alltag"
+  },
+  {
+    "id": 423,
+    "word": "Polizist",
+    "help": "helfen"
+  },
+  {
+    "id": 424,
+    "word": "Pilot",
+    "help": "Arbeit"
+  },
+  {
+    "id": 425,
+    "word": "Zahnarzt",
+    "help": "Menschen"
+  },
+  {
+    "id": 426,
+    "word": "Tierarzt",
+    "help": "Alltag"
+  },
+  {
+    "id": 427,
+    "word": "Mechaniker",
+    "help": "Fachwissen"
+  },
+  {
+    "id": 428,
+    "word": "Elektriker",
+    "help": "Menschen"
+  },
+  {
+    "id": 429,
+    "word": "Gärtner",
+    "help": "helfen"
+  },
+  {
+    "id": 430,
+    "word": "Maler",
+    "help": "Beruf"
+  },
+  {
+    "id": 431,
+    "word": "Musiker",
+    "help": "Arbeit"
+  },
+  {
+    "id": 432,
+    "word": "Sänger",
+    "help": "Aufgabe"
+  },
+  {
+    "id": 433,
+    "word": "Schauspieler",
+    "help": "Arbeit"
+  },
+  {
+    "id": 434,
+    "word": "Fotograf",
+    "help": "Arbeit"
+  },
+  {
+    "id": 435,
+    "word": "Journalist",
+    "help": "Aufgabe"
+  },
+  {
+    "id": 436,
+    "word": "Programmierer",
+    "help": "Verantwortung"
+  },
+  {
+    "id": 437,
+    "word": "Architekt",
+    "help": "Fachwissen"
+  },
+  {
+    "id": 438,
+    "word": "Bauarbeiter",
+    "help": "helfen"
+  },
+  {
+    "id": 439,
+    "word": "Richter",
+    "help": "Beruf"
+  },
+  {
+    "id": 440,
+    "word": "Anwalt",
+    "help": "Fachwissen"
+  },
+  {
+    "id": 441,
+    "word": "Verkäufer",
+    "help": "helfen"
+  },
+  {
+    "id": 442,
+    "word": "Friseur",
+    "help": "Arbeit"
+  },
+  {
+    "id": 443,
+    "word": "Postbote",
+    "help": "Arbeit"
+  },
+  {
+    "id": 444,
+    "word": "Busfahrer",
+    "help": "Menschen"
+  },
+  {
+    "id": 445,
+    "word": "Lokführer",
+    "help": "Beruf"
+  },
+  {
+    "id": 446,
+    "word": "Kapitän",
+    "help": "Aufgabe"
+  },
+  {
+    "id": 447,
+    "word": "Forscher",
+    "help": "Verantwortung"
+  },
+  {
+    "id": 448,
+    "word": "Astronaut",
+    "help": "Beruf"
+  },
+  {
+    "id": 449,
+    "word": "Designer",
+    "help": "Beruf"
+  },
+  {
+    "id": 450,
+    "word": "Tänzer",
+    "help": "Fachwissen"
+  },
+  {
+    "id": 451,
+    "word": "Trainer",
+    "help": "Alltag"
+  },
+  {
+    "id": 452,
+    "word": "Moderator",
+    "help": "Alltag"
+  },
+  {
+    "id": 453,
+    "word": "Pfarrer",
+    "help": "Menschen"
+  },
+  {
+    "id": 454,
+    "word": "Apotheker",
+    "help": "Aufgabe"
+  },
+  {
+    "id": 455,
+    "word": "Bibliothekar",
+    "help": "Arbeit"
+  },
+  {
+    "id": 456,
+    "word": "Erzieher",
+    "help": "helfen"
+  },
+  {
+    "id": 457,
+    "word": "Hausmeister",
+    "help": "Menschen"
+  },
+  {
+    "id": 458,
+    "word": "Kellner",
+    "help": "Alltag"
+  },
+  {
+    "id": 459,
+    "word": "Metzger",
+    "help": "helfen"
+  },
+  {
+    "id": 460,
+    "word": "Puzzle",
+    "help": "gemeinsam"
+  },
+  {
+    "id": 461,
+    "word": "Brettspiel",
+    "help": "kreativ"
+  },
+  {
+    "id": 462,
+    "word": "Kartenspiel",
+    "help": "gemeinsam"
+  },
+  {
+    "id": 463,
+    "word": "Schach",
+    "help": "gemeinsam"
+  },
+  {
+    "id": 464,
+    "word": "Domino",
+    "help": "kreativ"
+  },
+  {
+    "id": 465,
+    "word": "Würfel",
+    "help": "entspannt"
+  },
+  {
+    "id": 466,
+    "word": "Comic",
+    "help": "Erlebnis"
+  },
+  {
+    "id": 467,
+    "word": "Roman",
+    "help": "Wochenende"
+  },
+  {
+    "id": 468,
+    "word": "Gedicht",
+    "help": "Spaß"
+  },
+  {
+    "id": 469,
+    "word": "Musik",
+    "help": "Freizeit"
+  },
+  {
+    "id": 470,
+    "word": "Lied",
+    "help": "kreativ"
+  },
+  {
+    "id": 471,
+    "word": "Album",
+    "help": "Freizeit"
+  },
+  {
+    "id": 472,
+    "word": "Konzert",
+    "help": "Wochenende"
+  },
+  {
+    "id": 473,
+    "word": "Festival",
+    "help": "kreativ"
+  },
+  {
+    "id": 474,
+    "word": "Kino",
+    "help": "Freizeit"
+  },
+  {
+    "id": 475,
+    "word": "Theater",
+    "help": "Wochenende"
+  },
+  {
+    "id": 476,
+    "word": "Museum",
+    "help": "entspannt"
+  },
+  {
+    "id": 477,
+    "word": "Zoo",
+    "help": "Spaß"
+  },
+  {
+    "id": 478,
+    "word": "Freizeitpark",
+    "help": "Spaß"
+  },
+  {
+    "id": 479,
+    "word": "Spielplatz",
+    "help": "Spaß"
+  },
+  {
+    "id": 480,
+    "word": "Picknick",
+    "help": "entspannt"
+  },
+  {
+    "id": 481,
+    "word": "Geburtstag",
+    "help": "Spaß"
+  },
+  {
+    "id": 482,
+    "word": "Geschenk",
+    "help": "Spaß"
+  },
+  {
+    "id": 483,
+    "word": "Ballon",
+    "help": "Spaß"
+  },
+  {
+    "id": 484,
+    "word": "Feuerwerk",
+    "help": "Spaß"
+  },
+  {
+    "id": 485,
+    "word": "Urlaub",
+    "help": "Erlebnis"
+  },
+  {
+    "id": 486,
+    "word": "Reisepass",
+    "help": "unterwegs"
+  },
+  {
+    "id": 487,
+    "word": "Koffer",
+    "help": "Wochenende"
+  },
+  {
+    "id": 488,
+    "word": "Zelt",
+    "help": "unterwegs"
+  },
+  {
+    "id": 489,
+    "word": "Lagerfeuer",
+    "help": "gemeinsam"
+  },
+  {
+    "id": 490,
+    "word": "Sternenhimmel",
+    "help": "Erlebnis"
+  },
+  {
+    "id": 491,
+    "word": "Ferienhaus",
+    "help": "gemeinsam"
+  },
+  {
+    "id": 492,
+    "word": "Strand",
+    "help": "entspannt"
+  },
+  {
+    "id": 493,
+    "word": "Muschel",
+    "help": "Freizeit"
+  },
+  {
+    "id": 494,
+    "word": "Sonnencreme",
+    "help": "Wochenende"
+  },
+  {
+    "id": 495,
+    "word": "Postkarte",
+    "help": "Wochenende"
+  },
+  {
+    "id": 496,
+    "word": "Souvenir",
+    "help": "Erlebnis"
+  },
+  {
+    "id": 497,
+    "word": "Abenteuer",
+    "help": "Erlebnis"
+  },
+  {
+    "id": 498,
+    "word": "Ausflug",
+    "help": "unterwegs"
+  }
+]

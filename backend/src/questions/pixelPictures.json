@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Eiffelturm",
+    "images": [
+      "/pixel/eiffelturm1.png",
+      "/pixel/eiffelturm2.png",
+      "/pixel/eiffelturm3.png",
+      "/pixel/eiffelturm4.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Igel",
+    "images": [
+      "/pixel/igel1.png",
+      "/pixel/igel2.png",
+      "/pixel/igel3.png",
+      "/pixel/igel4.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Dom",
+    "images": [
+      "/pixel/dom1.png",
+      "/pixel/dom2.png",
+      "/pixel/dom3.png",
+      "/pixel/dom4.png"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "TVL",
+    "images": [
+      "/pixel/tvl1.png",
+      "/pixel/tvl2.png",
+      "/pixel/tvl3.png",
+      "/pixel/tvl4.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Ureich",
+    "images": [
+      "/pixel/ureich1.png",
+      "/pixel/ureich2.png",
+      "/pixel/ureich3.png",
+      "/pixel/ureich4.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Burger King",
+    "images": [
+      "/pixel/burgerking1.png",
+      "/pixel/burgerking2.png",
+      "/pixel/burgerking3.png",
+      "/pixel/burgerking4.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Helicopter",
+    "images": [
+      "/pixel/heli1.png",
+      "/pixel/heli2.png",
+      "/pixel/heli3.png",
+      "/pixel/heli4.png"
+    ]
+  }
+]

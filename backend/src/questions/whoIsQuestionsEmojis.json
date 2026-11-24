@@ -1,0 +1,103 @@
+[
+    {
+        "id": 1,
+        "title": "Cro",
+        "hints": [
+        "♾️",
+        "🏝️",
+        "🎙️",
+        "🐼"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Angela Merkel",
+        "hints": [
+        "👩",
+        "🤝",
+        "🏛️",
+        "🇩🇪"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Ronaldo",
+        "hints": [
+        "⚡",
+        "7️⃣",
+        "🇵🇹",
+        "⚽"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Albert Einstein",
+        "hints": [
+        "🧠",
+        "⏳",
+        "👨‍🦳",
+        "🧮"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Knossi",
+        "hints": [
+        "🏕️",
+        "🎰",
+        "📺",
+        "👑"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Günther Jauch",
+        "hints": [
+        "❓",
+        "🪑",
+        "📺",
+        "💶"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Homer Simpsons",
+        "hints": [
+        "🍺",
+        "🟡",
+        "☢️",
+        "🍩"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Peter fox",
+        "hints": [
+        "🌆",
+        "🎶",
+        "🐒",
+        "🆕"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Spongebob",
+        "hints": [
+        "👙",
+        "🍔",
+        "🧽",
+        "🍍"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "James Bond",
+        "hints": [
+        "🕶️",
+        "🍸",
+        "🎰",
+        "🔫"
+        ]
+    }
+
+]
