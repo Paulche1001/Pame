@@ -6,16 +6,14 @@ Das gesamte Projekt liegt direkt in `party-game`: Backend, Frontend, Bilder, Fra
 
 ## Spielmodi
 
-- Schätzfragen mit drei Fragensätzen und der Punktevergabe 3/2/1
-- Pixelraten mit sieben Motiven und drei Punkten für eine richtige Antwort
+- Schätzfragen
+- Pixelraten 
 - Who Is? mit Emojis sowie Guess the Beer, jeweils mit Hinweisen und Buzzer
 - What Is? mit erfundenen Antworten und Abstimmung
 - Stadt–Land–Fluss mit eigenen Kategorien
 - Imposter mit individuellen Rollen und Abstimmungen
 - DrinkGame mit Aufgaben, Abstimmungen und Schätzfragen
 - Testchat für lokale Funktionsprüfungen
-
-Der persönliche klassische WhoIs-Fragensatz ist nicht Teil dieser Version. Spielregeln und Punktewerte der übrigen Modi bleiben erhalten.
 
 ## Lokal starten
 
