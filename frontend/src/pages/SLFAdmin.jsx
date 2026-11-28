@@ -44,8 +44,8 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
   const firstName = firstFinishPlayerId ? players.find(p => p.id === firstFinishPlayerId)?.name : null;
 
   return (
-    <div className="p-6 text-center flex flex-col gap-6 items-center">
-      <h1 className="text-3xl font-bold text-pink-500">Stadt–Land–Fluss — Admin</h1>
+    <div className="round-content">
+
 
       <div className="text-gray-200">
         <p className="font-bold text-xl">Runde {round}/{maxRounds}</p>
@@ -55,15 +55,15 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
       <div className="flex gap-4 flex-wrap justify-center">
         <button
           onClick={() => toggleLeaderboard(true)}
-          className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg font-bold"
+          className="btn btn-secondary"
         >
-          Leaderboard
+          Rangliste
         </button>
 
         {!locked ? (
           <button
             onClick={() => socket.emit("admin_action", { action: "slf_lock" })}
-            className="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-lg font-bold"
+            className="btn btn-game"
           >
             Eingabe stoppen
           </button>
@@ -74,7 +74,7 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
             const confirmLeave = window.confirm("Willst du das Spiel wirklich verlassen?");
             if (confirmLeave) socket.emit("admin_action", { action: "lobby" });
           }}
-          className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-lg font-bold"
+          className="btn btn-danger"
         >
           Verlassen
         </button>
@@ -82,7 +82,7 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
         {screen === "input" && !locked && (
             <button
                 onClick={() => socket.emit("admin_action", { action: "slf_reroll" })}
-                className="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg font-bold"
+                className="btn btn-secondary"
             >
                 Buchstabe neu würfeln
             </button>
@@ -140,19 +140,19 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
 
                   <div className="flex gap-2 justify-center pt-2">
                     <button
-                      className="bg-red-600 hover:bg-red-700 px-3 py-2 rounded font-bold"
+                      className="btn btn-danger"
                       onClick={() => socket.emit("admin_action", { action: "slf_mark", category: currentCategory, playerId: p.id, mark: "wrong" })}
                     >
                       0
                     </button>
                     <button
-                      className="bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded font-bold"
+                      className="btn btn-game"
                       onClick={() => socket.emit("admin_action", { action: "slf_mark", category: currentCategory, playerId: p.id, mark: "dup" })}
                     >
                       1
                     </button>
                     <button
-                      className="bg-green-600 hover:bg-green-700 px-3 py-2 rounded font-bold"
+                      className="btn btn-success"
                       onClick={() => socket.emit("admin_action", { action: "slf_mark", category: currentCategory, playerId: p.id, mark: "correct" })}
                     >
                       2
@@ -165,7 +165,7 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
 
           <div className="flex gap-3 justify-center flex-wrap pt-2">
             <button
-              className="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded font-bold"
+              className="btn btn-secondary"
               onClick={() => socket.emit("admin_action", { action: "slf_prev_category" })}
               disabled={reviewIndex === 0}
             >
@@ -174,7 +174,7 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
 
             {reviewIndex < categories.length - 1 ? (
               <button
-                className="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-lg font-bold"
+                className="btn btn-game"
                 onClick={() => socket.emit("admin_action", { action: "slf_next_category" })}
               >
                 Nächste Kategorie →
@@ -182,7 +182,7 @@ export default function SLFAdmin({ gameState, socket, toggleLeaderboard }) {
             ) : (
               <>
                 <button
-                  className="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-lg font-bold"
+                  className="btn btn-game"
                   onClick={() => socket.emit("admin_action", { action: "slf_next_round" })}
                 >
                   Nächste Runde

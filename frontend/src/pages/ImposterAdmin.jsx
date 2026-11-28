@@ -26,7 +26,7 @@ export default function ImposterAdmin({ gameState, socket }) {
     const youAreKicked = kicked?.includes(adminName);
 
     return (
-        <div className="flex flex-col py-5 items-center w-full max-w-3xl mx-auto px-4">
+        <div className="round-content">
 
             <div className="w-full flex justify-end">
                 <button
@@ -38,10 +38,8 @@ export default function ImposterAdmin({ gameState, socket }) {
                         socket.emit("admin_action", { action: "lobby" });
                         }
                     }}
-                    className="text-red-600 hover:bg-white px-2 py-2 rounded-lg font-bold"
-                    >
-                    X
-                </button>
+                    className="btn btn-game"
+                    >Verlassen</button>
             </div>
 
             {screen === "imposter_screen" && (
@@ -107,11 +105,11 @@ export default function ImposterAdmin({ gameState, socket }) {
                     {problemMessage ? (
                         <h2 className="text-pink-600 text-2xl text-center">{problemMessage}!</h2>
                     ) : (
-                        <h2 className="text-pink-600 text-2xl invisible">Hahaha</h2>
+                        null
                     )}
 
                     <button
-                        className="bg-green-900 px-4 py-3 rounded-lg font-bold text-center mt-4 w-full"
+                        className="btn btn-success"
                         onClick={() => {
                             socket.emit("admin_action", {
                                 action: "start_selection",
@@ -147,7 +145,7 @@ export default function ImposterAdmin({ gameState, socket }) {
                                                 </span>
                                             </span>
                                             {!youAreKicked && (
-                                                <input
+                                                <input aria-label={name}
                                                     type="radio"
                                                     name="player"
                                                     checked={selectedPlayers?.[adminName] === name}
@@ -180,24 +178,22 @@ export default function ImposterAdmin({ gameState, socket }) {
                     {problemMessage ? (
                         <h2 className="text-pink-600 text-2xl text-center">{problemMessage}!</h2>
                     ) : (
-                        <h2 className="text-pink-600 text-2xl invisible">Hahaha</h2>
+                        null
                     )}
 
                     <div className="flex flex-col">
                         {!imposterWin && !crewmatesWin && (
                             <>
                             <button
-                                className="bg-green-900  px-4 py-3 rounded-lg font-bold text-center mt-4"
+                                className="btn btn-success"
                                 onClick={() => {
                                     socket.emit("admin_action", {
                                         action: "vote_imposter",
                                     })
-                                }}>
-                                Vote
-                            </button>
+                                }}>Abstimmung auswerten</button>
 
                             <button
-                                className="bg-green-900  px-4 py-3 rounded-lg font-bold text-center mt-4"
+                                className="btn btn-success"
                                 onClick={() => {
                                     socket.emit("admin_action", {
                                         action: "keep_playing",
@@ -211,7 +207,7 @@ export default function ImposterAdmin({ gameState, socket }) {
 
 
                         <button
-                            className="bg-green-900  px-4 py-3 rounded-lg font-bold text-center mt-4"
+                            className="btn btn-success"
                             onClick={() => {
                                 socket.emit("admin_action", {
                                     action: "next_round",

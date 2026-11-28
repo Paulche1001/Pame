@@ -17,9 +17,9 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
   /* Fake Antwort */
   if (screen === "fake") {
     return (
-      <div className="p-4 text-center flex flex-col justify-center min-h-[50vh]">
-        <h1 className="text-2xl mb-4">Was ist?</h1>
-        <p className="mb-4">{question}</p>
+      <div className="round-content">
+        <h3>Erfinde eine überzeugende Antwort</h3>
+        <p className="question-text">{question}</p>
 
         {timer !== null && (
           <p className="text-yellow-400 font-bold text-xl mb-3">
@@ -29,7 +29,7 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
 
         {!hasSubmitted ? (
           <div className="flex flex-col items-center gap-2">
-            <input
+            <input aria-label="Deine Antwort"
               className="p-2 bg-gray-800 rounded w-64"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -37,7 +37,7 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
 
             <button
               disabled={!input.trim()}
-              className="bg-pink-500 px-4 py-2 mt-4 rounded font-bold"
+              className="btn btn-game"
               onClick={() => {
                 socket.emit("player_action", {
                   action: "submit_fake",
@@ -51,7 +51,7 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
             </button>
           </div>
         ) : (
-          <p className="text-gray-300 font-semibold">Warte bis alle etwas eingegeben haben...</p>
+          <p className="text-gray-300 font-semibold">Antwort gesendet. Warte auf die Abstimmung.</p>
         )}
 
       </div>
@@ -61,7 +61,7 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
  /* Voting + Reveal */
   if (screen === "select") {
     return (
-      <div className="p-4 text-center flex flex-col justify-center min-h-[50vh]">
+      <div className="round-content">
         {!hasRevealStarted && <h1 className="text-xl mb-4">Welche Antwort ist richtig?</h1>}
         {hasRevealStarted && <h1 className="text-xl mb-4">Abstimmung beendet</h1>}
 
@@ -83,14 +83,7 @@ export default function WhatIsPlayer({ gameState, socket, playerId, timer }) {
             <button
               key={id}
               disabled={hasRevealStarted}
-              className={`
-                w-full mb-2 px-4 py-2 rounded transition
-                ${!isRevealed ? "bg-gray-800" : ""}
-                ${isRevealed && isCorrect ? "bg-green-600" : ""}
-                ${isRevealed && !isCorrect ? "bg-gray-700" : ""}
-                ${selectedAnswer === id ? "border-2 border-pink-500" : "border border-transparent"}
-                ${hasRevealStarted ? "opacity-80 cursor-not-allowed" : ""}
-              `}
+              className={`answer-option mb-3 ${isRevealed && isCorrect ? "answer-option--correct" : ""}`} aria-pressed={selectedAnswer === id}
               onClick={() => {
                 if (hasRevealStarted) return;
                 socket.emit("player_action", {

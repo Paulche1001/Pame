@@ -26,7 +26,7 @@ export default function PixelPlayer({ gameState, socket, playerId, timer }) {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center min-h-[50vh] p-4 items-center mt-6">
+    <div className="round-content">
 
       {timer !== null && (
           <p className="text-yellow-400 font-bold text-xl mb-3">
@@ -34,7 +34,7 @@ export default function PixelPlayer({ gameState, socket, playerId, timer }) {
           </p>
         )}
 
-      <img alt="Verpixeltes R?tselbild" src={image} className="max-h-[50vh] w-auto rounded-xl mb-6" />
+      <img alt="Verpixeltes Rätselbild" src={image} className="max-h-[50vh] w-auto rounded-xl mb-6" />
 
       {iAmBuzzed && (
         <p className="text-green-500 font-bold text-xl">
@@ -57,7 +57,7 @@ export default function PixelPlayer({ gameState, socket, playerId, timer }) {
       {!someoneBuzzed && !iAmBlocked && imageStep < 3 && (
         <button
           onClick={handleBuzz}
-          className="bg-pink-600 text-white py-3 px-6 rounded-xl text-xl font-bold shadow-lg"
+          className="btn btn-game"
         >
           BUZZ!
         </button>

@@ -15,7 +15,3 @@ export function playerIdentity() {
   if (!token) { token = randomId(); localStorage.setItem("playerToken", token); }
   return { id, token };
 }
-
-export function clearPlayerIdentity() {
-  for (const key of ["playerId", "playerToken", "playerName"]) localStorage.removeItem(key);
-}

@@ -14,7 +14,7 @@ export default function TestPlayer({ gameState, socket, playerId }) {
     }, [messages]);
 
     return (
-        <div className="p-6 text-white flex flex-col gap-6 items-center">
+        <div className="round-content">
 
             {list.length === 0 ? (
                 <p>Keine Nachrichten</p>
@@ -32,9 +32,9 @@ export default function TestPlayer({ gameState, socket, playerId }) {
                 </div>
             )}
 
-            <div className="w-full flex justify-center rounded-2xl bg-white p-2">
-                <input
-                    className="bg-white w-full text-black caret-pink-600 px-2 py-1 outline-none focus:outline-none focus:ring-0 focus:border-transparent"
+            <div className="field-row">
+                <input aria-label="Nachricht"
+                    className="w-full"
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -42,8 +42,8 @@ export default function TestPlayer({ gameState, socket, playerId }) {
                 />
 
                 <button
-                    className="bg-pink-600 w-10 h-10"
-                    style={{clipPath: "polygon(0 0, 100% 50%, 0 100%)"}}
+                    className="btn btn-game"
+
                     onClick={() => {
                         socket.emit("player_action", {
                             action: "send_message",
@@ -52,8 +52,7 @@ export default function TestPlayer({ gameState, socket, playerId }) {
                         })
                         setInput("");
                     }}
-                >
-                </button>
+                >Senden</button>
             </div>
 
         </div>

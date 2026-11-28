@@ -15,24 +15,24 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
   const totalPlayers = players.length;
 
   return (
-    <div className="p-6 text-center flex flex-col gap-6 items-center">
-      <h1 className="text-3xl font-bold text-pink-500">What Is? — Admin</h1>
-      <h2 className="text-xl font-bold">{question}</h2>
+    <div className="round-content">
+
+      <h2 className="question-text">{question}</h2>
 
       <div className="flex gap-4">
 
         <button
           onClick={() => toggleLeaderboard(true)}
-          className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg font-bold"
+          className="btn btn-secondary"
         >
-          Leaderboard
+          Rangliste
         </button>
 
         {/* TIMER CONTAINER */}
         <div className="flex items-center justify-center">
           {timer === null ? (
             <button
-              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-bold"
+              className="btn btn-success"
               onClick={() => {
                 const seconds = 5;
                 if (seconds > 0) {
@@ -58,7 +58,7 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
               socket.emit("admin_action", { action: "lobby" });
             }
           }}
-          className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-lg font-bold"
+          className="btn btn-danger"
         >
           Verlassen
         </button>
@@ -85,10 +85,10 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
           </p>
 
           <button
-            className="bg-yellow-400 px-4 py-2 rounded text-black font-bold mt-2"
+            className="btn btn-secondary"
             onClick={() => socket.emit("admin_action", { action: "reveal" })}
           >
-            Voting starten
+            Abstimmung starten
           </button>
         </>
       )}
@@ -106,7 +106,7 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
               .filter(Boolean);
 
             return (
-              <div
+              <button
                 key={id}
                 onClick={() =>
                   socket.emit("admin_action", {
@@ -114,11 +114,7 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
                     answerId: id
                   })
                 }
-                className={`p-3 rounded border cursor-pointer transition
-                  ${!isRevealed ? "bg-gray-800" : ""}
-                  ${isRevealed && isCorrect ? "bg-green-600" : ""}
-                  ${isRevealed && !isCorrect ? "bg-gray-700" : ""}
-                `}
+                type="button" data-answer-option className={`answer-option ${isRevealed && isCorrect ? "answer-option--correct" : ""}`}
               >
                 <p className="font-bold">{a.answer}</p>
 
@@ -132,7 +128,7 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
                   </p>
                 )}
 
-              </div>
+              </button>
             );
           })}
 
@@ -141,7 +137,7 @@ export default function WhatIsAdmin({ gameState, socket, toggleLeaderboard, time
           </p>
 
           <button
-            className="bg-pink-500 px-6 py-3 rounded mt-4 font-bold"
+            className="btn btn-game"
             onClick={() => socket.emit("admin_action", { action: "next" })}
           >
             Nächste Frage

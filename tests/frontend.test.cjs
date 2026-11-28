@@ -18,6 +18,42 @@ async function loader() {
 }
 after(async () => { await vite?.close(); });
 
+test("room links and saved names/host keys stay separate without resetting a browser's identity", async () => {
+  const original = { window: global.window, localStorage: global.localStorage, sessionStorage: global.sessionStorage };
+  const storage = () => {
+    const values = new Map();
+    return { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, String(value)), removeItem: key => values.delete(key) };
+  };
+  global.localStorage = storage();
+  global.sessionStorage = storage();
+  global.window = { location: new URL("http://localhost/player?room=ABC234"), history: { replaceState(_, __, url) { global.window.location = new URL(url, global.window.location); } } };
+  try {
+    const server = await loader();
+    const rooms = await server.ssrLoadModule("/src/lib/rooms.js");
+    const { playerIdentity } = await server.ssrLoadModule("/src/lib/connection.js");
+    const identity = playerIdentity();
+    rooms.rememberPlayerRoom("ABC234", "Alice");
+    rooms.rememberPlayerRoom("DEF567", "Bob");
+    rooms.clearPlayerRoom("ABC234");
+    assert.equal(rooms.savedPlayerName("ABC234"), null);
+    assert.equal(rooms.savedPlayerName("DEF567"), "Bob");
+    assert.deepEqual(playerIdentity(), identity);
+    rooms.rememberHostRoom({ roomCode: "ABC234", hostKey: "host-secret-a" });
+    rooms.rememberHostRoom({ roomCode: "DEF567", hostKey: "host-secret-b" });
+    assert.equal(rooms.savedHostKey("ABC234"), "host-secret-a");
+    assert.equal(rooms.readHostRoom().roomCode, "DEF567");
+    assert.ok(!window.location.href.includes("host-secret"));
+    rooms.setRoomInUrl("ZZZ999");
+    assert.equal(rooms.readHostRoom(), null);
+    sessionStorage.setItem("pameHostRooms", "broken JSON");
+    assert.equal(rooms.savedHostKey("ABC234"), "");
+  } finally {
+    for (const [key, value] of Object.entries(original)) {
+      if (value === undefined) delete global[key]; else global[key] = value;
+    }
+  }
+});
+
 test("rankings handle ties and zero without mutating game state", async () => {
   const server = await loader();
   const { leaderboard, rankBy } = await server.ssrLoadModule("/src/lib/ranking.js");

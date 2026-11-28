@@ -2,11 +2,23 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
-const { timingSafeEqual } = require("node:crypto");
-const { createGameEngine } = require("./gameEngine");
-const { publicPlayers, integer } = require("./utils");
+const { timingSafeEqual, randomBytes, randomInt } = require("node:crypto");
+const { createGameRoom } = require("./gameRoom");
 
-function createGameServer({ reconnectMs = 5000, adminToken = process.env.ADMIN_TOKEN || "" } = {}) {
+function matchesSecret(value, secret) {
+  if (typeof value !== "string") return false;
+  const supplied = Buffer.from(value);
+  const expected = Buffer.from(secret);
+  return supplied.length === expected.length && timingSafeEqual(supplied, expected);
+}
+function normalizeCode(value) {
+  return typeof value === "string" ? value.trim().toUpperCase() : "";
+}
+
+function createGameServer({
+  reconnectMs = 5000, adminToken = process.env.ADMIN_TOKEN || "",
+  roomIdleMs = 30 * 60 * 1000, maxRooms = 100,
+} = {}) {
   if (typeof adminToken !== "string" || (adminToken && adminToken.length < 16)) {
     throw new Error("ADMIN_TOKEN muss mindestens 16 Zeichen lang sein.");
   }
@@ -15,212 +27,192 @@ function createGameServer({ reconnectMs = 5000, adminToken = process.env.ADMIN_T
   app.get("/health", (_, res) => res.json({ ok: true }));
   const server = http.createServer(app);
   const io = new Server(server, { cors: { origin: "*" } });
-  const gameEngine = createGameEngine();
-  const players = new Map();
-  const bannedPlayers = new Set();
-  const disconnectTimers = new Map();
-  let timerInterval = null;
-  let timerRemaining = null;
-  let timerDeadline = null;
-  let showLeaderboard = false;
-
-  function clearGameTimer(reset = false) {
-    clearInterval(timerInterval);
-    timerInterval = null;
-    if (reset) {
-      timerRemaining = null;
-      timerDeadline = null;
-      io.emit("timer_done");
+  const rooms = new Map();
+  let closing = false;
+  const getRoom = code => rooms.get(normalizeCode(code));
+  const replyTo = callback => typeof callback === "function" ? callback : () => {};
+  function detach(socket, removePlayer = true) {
+    const room = getRoom(socket.data.roomCode);
+    if (room) {
+      if (removePlayer && room.players.get(socket.data.playerId)?.socketId === socket.id) room.removePlayer(socket.data.playerId);
+      socket.leave(room.channel);
+      socket.leave(room.adminChannel);
+      room.touch();
     }
+    socket.data.role = null;
+    socket.data.playerId = null;
+    socket.data.roomCode = null;
   }
-  function updatePlayersEverywhere() {
-    gameEngine.setPlayers([...players.values()]);
-    io.emit("players_update", publicPlayers([...players.values()]));
-    gameEngine.broadcastState();
-  }
-  function syncControls(socket) {
-    socket.emit("leaderboard_toggle", showLeaderboard);
-    if (timerRemaining !== null) socket.emit("timer_update", timerRemaining);
-    else socket.emit("timer_done");
-  }
-  function removePlayer(id) {
-    clearTimeout(disconnectTimers.get(id));
-    disconnectTimers.delete(id);
-    players.delete(id);
-    updatePlayersEverywhere();
-  }
-  function runTimer() {
-    timerDeadline = Date.now() + timerRemaining * 1000;
-    timerInterval = setInterval(() => {
-      const remaining = Math.max(0, Math.ceil((timerDeadline - Date.now()) / 1000));
-      if (remaining !== timerRemaining) {
-        timerRemaining = remaining;
-        io.emit("timer_update", timerRemaining);
-      }
-      if (timerRemaining === 0) {
-        clearGameTimer(true);
-        // Advance once on the server, even if the admin reconnects or has several tabs.
-        if (gameEngine.getState().mode === "pixel") gameEngine.handleAdminAction("next_image");
-      }
-    }, 100);
+  function bind(socket, room, role, playerId = null) {
+    if (socket.data.roomCode !== room.code || socket.data.role !== role || socket.data.playerId !== playerId) detach(socket);
+    socket.data.roomCode = room.code;
+    socket.data.role = role;
+    socket.data.playerId = playerId;
+    socket.join(room.channel);
+    if (role === "admin") socket.join(room.adminChannel);
+    else socket.leave(room.adminChannel);
+    room.touch();
   }
   function adminHandler(socket, event, handler) {
     socket.on(event, (...args) => {
-      if (socket.data.role !== "admin") return;
-      try { handler(...args); }
+      const room = getRoom(socket.data.roomCode);
+      if (!room || socket.data.role !== "admin") return;
+      room.touch();
+      try { handler(room, ...args); }
       catch (error) { socket.emit("action_error", error.message || "Aktion konnte nicht ausgeführt werden."); }
     });
   }
+  function sweepRooms() {
+    for (const [code, room] of rooms) {
+      if (!io.sockets.adapter.rooms.get(room.channel)?.size && Date.now() - room.lastActiveAt >= roomIdleMs) {
+        room.dispose();
+        rooms.delete(code);
+      }
+    }
+  }
+  const cleanupInterval = setInterval(sweepRooms, Math.max(25, Math.min(60000, roomIdleMs)));
+  cleanupInterval.unref();
 
   io.on("connection", socket => {
     socket.emit("admin_auth_required", Boolean(adminToken));
+    socket.on("room_create", (payload, callback) => {
+      const reply = replyTo(callback);
+      if (adminToken && !matchesSecret(payload?.token, adminToken)) {
+        reply({ success: false, message: "Server-Schlüssel fehlt oder ist falsch." }); return;
+      }
+      const hostName = typeof payload?.hostName === "string" ? payload.hostName.trim() : "";
+      if (!hostName || hostName.length > 40) {
+        reply({ success: false, message: "Bitte gib einen Namen für die Spielleitung mit höchstens 40 Zeichen ein." }); return;
+      }
+      if (rooms.size >= maxRooms) {
+        reply({ success: false, message: "Zurzeit sind alle Räume belegt. Bitte später erneut versuchen." }); return;
+      }
+      const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+      let code;
+      do { code = Array.from({ length: 6 }, () => alphabet[randomInt(alphabet.length)]).join(""); } while (rooms.has(code));
+      const room = createGameRoom({ code, hostKey: randomBytes(32).toString("hex"), hostName, io, reconnectMs });
+      rooms.set(code, room);
+      bind(socket, room, "admin");
+      room.sync(socket, "admin");
+      reply({ success: true, roomCode: code, hostKey: room.hostKey, hostName: room.hostName });
+    });
+    socket.on("admin_join", (payload, callback) => {
+      const reply = replyTo(callback);
+      const room = getRoom(payload?.roomCode);
+      if (!room) { reply({ success: false, message: "Der Raum wurde nicht gefunden. Erstelle einen neuen Raum." }); return; }
+      if (!matchesSecret(payload?.hostKey, room.hostKey)) {
+        reply({ success: false, message: "Der Spielleiter-Schlüssel fehlt oder ist falsch." }); return;
+      }
+      bind(socket, room, "admin");
+      room.sync(socket, "admin");
+      reply({ success: true, roomCode: room.code, hostName: room.hostName });
+    });
     socket.on("player_join", (payload, callback) => {
-      const reply = typeof callback === "function" ? callback : () => {};
-      if (!payload || typeof payload !== "object") { reply({ success: false, message: "Ungültiger Beitritt." }); return; }
+      const reply = replyTo(callback);
+      const room = getRoom(payload?.roomCode);
+      if (!room) { reply({ success: false, message: "Raum nicht gefunden. Prüfe den Raumcode." }); return; }
       const { playerId, playerToken } = payload;
       const name = typeof payload.name === "string" ? payload.name.trim().slice(0, 40) : "";
-      if (typeof playerId !== "string" || !/^[a-zA-Z0-9-]{1,100}$/.test(playerId) || typeof playerToken !== "string" || playerToken.length < 16 || playerToken.length > 200 || !name) {
+      if (typeof playerId !== "string" || !/^[a-zA-Z0-9-]{1,100}$/.test(playerId) ||
+          typeof playerToken !== "string" || playerToken.length < 16 || playerToken.length > 200 || !name) {
         reply({ success: false, message: "Bitte gib einen Namen ein." }); return;
       }
-      if (bannedPlayers.has(playerId)) { reply({ success: false, message: "Du wurdest entfernt." }); socket.emit("kicked"); return; }
-      const existing = players.get(playerId);
-      if (existing && existing.playerToken !== playerToken) { reply({ success: false, message: "Diese Spieler-ID wird bereits verwendet." }); return; }
-      if ([...players.values()].some(p => p.id !== playerId && p.name.toLocaleLowerCase() === name.toLocaleLowerCase()) ||
-          gameEngine.currentMode?.adminName?.toLocaleLowerCase() === name.toLocaleLowerCase()) {
-        reply({ success: false, message: "Dieser Name ist bereits vergeben." }); return;
+      if (room.bannedPlayers.has(playerId)) {
+        reply({ success: false, message: "Du wurdest aus diesem Raum entfernt." }); return;
       }
-      if (socket.data.playerId && socket.data.playerId !== playerId) removePlayer(socket.data.playerId);
+      const existing = room.players.get(playerId);
+      if (existing && existing.playerToken !== playerToken) {
+        reply({ success: false, message: "Diese Spieler-ID wird bereits verwendet." }); return;
+      }
+      if ([...room.players.values()].some(p => p.id !== playerId && p.name.toLocaleLowerCase() === name.toLocaleLowerCase()) ||
+          room.hostName.toLocaleLowerCase() === name.toLocaleLowerCase() ||
+          room.gameEngine.currentMode?.adminName?.toLocaleLowerCase() === name.toLocaleLowerCase()) {
+        reply({ success: false, message: "Dieser Name ist in diesem Raum bereits vergeben." }); return;
+      }
       if (existing && existing.socketId !== socket.id) {
         const oldSocket = io.sockets.sockets.get(existing.socketId);
-        if (oldSocket) { oldSocket.data.playerId = null; oldSocket.emit("session_replaced"); }
+        if (oldSocket) { detach(oldSocket, false); oldSocket.emit("session_replaced"); }
       }
-      clearTimeout(disconnectTimers.get(playerId));
-      disconnectTimers.delete(playerId);
-      // Keep names stable during a game because name-based voting uses them.
-      const joinedName = existing && gameEngine.currentMode ? existing.name : name;
-      players.set(playerId, { ...existing, id: playerId, name: joinedName, points: existing?.points || 0, playerToken, socketId: socket.id });
-      socket.data.playerId = playerId;
-      socket.data.role = "player";
-      socket.leave("admins");
-      updatePlayersEverywhere();
-      socket.emit("game_state", gameEngine.getState({ role: "player", playerId }));
-      syncControls(socket);
-      reply({ success: true, name: joinedName });
-    });
-
-    // Private local rounds can stay open; public servers can require a secret host key.
-    socket.on("admin_join", (payload, callback) => {
-      const reply = typeof callback === "function" ? callback : () => {};
-      const supplied = typeof payload?.token === "string" ? Buffer.from(payload.token) : Buffer.alloc(0);
-      const expected = Buffer.from(adminToken);
-      if (adminToken && (supplied.length !== expected.length || !timingSafeEqual(supplied, expected))) {
-        socket.emit("admin_auth_required", true);
-        reply({ success: false, message: "Admin-Schlüssel fehlt oder ist falsch." });
-        return;
-      }
-      if (socket.data.playerId) { removePlayer(socket.data.playerId); socket.data.playerId = null; }
-      socket.data.role = "admin";
-      socket.join("admins");
-      socket.emit("players_update", publicPlayers([...players.values()]));
-      socket.emit("admin_state", gameEngine.getState({ role: "admin" }));
-      syncControls(socket);
-      reply({ success: true });
-    });
-
-    adminHandler(socket, "admin_delete_player", playerId => {
-      const player = players.get(playerId);
-      if (!player) return;
-      bannedPlayers.add(playerId);
-      const target = io.sockets.sockets.get(player.socketId);
-      if (target) { target.data.playerId = null; target.data.role = null; target.emit("kicked"); }
-      removePlayer(playerId);
+      bind(socket, room, "player", playerId);
+      clearTimeout(room.disconnectTimers.get(playerId));
+      room.disconnectTimers.delete(playerId);
+      const joinedName = existing && room.gameEngine.currentMode ? existing.name : name;
+      room.players.set(playerId, { ...existing, id: playerId, name: joinedName, points: existing?.points || 0, playerToken, socketId: socket.id });
+      room.updatePlayers();
+      room.sync(socket, "player");
+      reply({ success: true, roomCode: room.code, name: joinedName });
     });
     socket.on("player_leave", (payload, callback) => {
-      const reply = typeof callback === "function" ? callback : () => {};
-      const player = players.get(socket.data.playerId);
+      const reply = replyTo(callback);
+      const room = getRoom(socket.data.roomCode);
+      const player = room?.players.get(socket.data.playerId);
       if (!player || player.socketId !== socket.id || payload?.playerId !== player.id) {
         reply({ success: false, message: "Spieler wurde nicht gefunden." }); return;
       }
-      socket.data.playerId = null;
-      socket.data.role = null;
-      removePlayer(player.id);
+      detach(socket);
       reply({ success: true });
     });
+    socket.on("room_leave", (_, callback) => { detach(socket); replyTo(callback)({ success: true }); });
     socket.on("disconnect", () => {
-      const player = players.get(socket.data.playerId);
-      if (!player || player.socketId !== socket.id) return;
-      clearTimeout(disconnectTimers.get(player.id));
-      disconnectTimers.set(player.id, setTimeout(() => {
-        const current = players.get(player.id);
-        if (current?.socketId === socket.id) removePlayer(player.id);
-      }, reconnectMs));
-    });
-
-    adminHandler(socket, "admin_select_mode", payload => {
-      const modeName = typeof payload === "string" ? payload : payload?.modeName;
-      const options = typeof payload?.options === "object" && payload.options && !Array.isArray(payload.options) ? payload.options : {};
-      if (gameEngine.selectMode(modeName, io, options)) {
-        clearGameTimer(true);
-        showLeaderboard = false;
-        io.emit("leaderboard_toggle", false);
-      }
+      if (!closing) getRoom(socket.data.roomCode)?.disconnected(socket);
     });
     socket.on("player_action", payload => {
-      if (socket.data.role !== "player" || !players.has(socket.data.playerId)) return;
-      try { gameEngine.handlePlayerAction(socket, payload); }
+      const room = getRoom(socket.data.roomCode);
+      if (!room || socket.data.role !== "player" || !room.players.has(socket.data.playerId)) return;
+      room.touch();
+      try { room.gameEngine.handlePlayerAction(socket, payload); }
       catch { socket.emit("action_error", "Ungültige Spielaktion."); return; }
-      if (gameEngine.currentMode?.buzzedPlayer) clearGameTimer(true);
+      if (room.gameEngine.currentMode?.buzzedPlayer) room.clearTimer(true);
     });
-    adminHandler(socket, "admin_change_points", payload => {
-      const player = players.get(payload?.playerId);
-      const amount = payload?.amount;
-      if (!player || typeof amount !== "number" || !Number.isFinite(amount) || !Number.isSafeInteger(amount)) return;
-      player.points = Math.max(0, Math.min(Number.MAX_SAFE_INTEGER, player.points + amount));
-      updatePlayersEverywhere();
+    adminHandler(socket, "admin_delete_player", (room, playerId) => {
+      const player = room.players.get(playerId);
+      if (!player) return;
+      room.bannedPlayers.add(playerId);
+      const target = io.sockets.sockets.get(player.socketId);
+      if (target) { detach(target, false); target.emit("kicked"); }
+      room.removePlayer(playerId);
     });
-    adminHandler(socket, "admin_action", payload => {
-      gameEngine.handleAdminAction(payload, io);
-      const action = typeof payload === "string" ? payload : payload?.action;
-      if (action === "lobby") {
-        showLeaderboard = false;
-        io.emit("leaderboard_toggle", false);
+    adminHandler(socket, "admin_select_mode", (room, payload) => {
+      const modeName = typeof payload === "string" ? payload : payload?.modeName;
+      const options = typeof payload?.options === "object" && payload.options && !Array.isArray(payload.options) ? payload.options : {};
+      const modeOptions = ["imposter", "drinking"].includes(modeName) ? { ...options, adminName: room.hostName } : options;
+      if (room.gameEngine.selectMode(modeName, room.transport, modeOptions)) {
+        room.clearTimer(true);
+        room.showLeaderboard = false;
+        room.transport.emit("leaderboard_toggle", false);
       }
-      if (["lobby", "next", "next_question", "next_image", "next_hint", "next_round", "slf_next_round", "correct"].includes(action)) clearGameTimer(true);
     });
-    adminHandler(socket, "admin_toggle_leaderboard", state => {
-      showLeaderboard = Boolean(state);
-      io.emit("leaderboard_toggle", showLeaderboard);
+    adminHandler(socket, "admin_change_points", (room, payload) => {
+      const player = room.players.get(payload?.playerId);
+      const amount = payload?.amount;
+      if (!player || typeof amount !== "number" || !Number.isSafeInteger(amount)) return;
+      player.points = Math.max(0, Math.min(Number.MAX_SAFE_INTEGER, player.points + amount));
+      room.updatePlayers();
     });
-    adminHandler(socket, "admin_start_timer", seconds => {
-      if (!Number.isFinite(Number(seconds)) || Number(seconds) < 1) return;
-      clearGameTimer();
-      timerRemaining = integer(seconds, 5, 1, 3600);
-      io.emit("timer_update", timerRemaining);
-      runTimer();
+    adminHandler(socket, "admin_action", (room, payload) => {
+      room.gameEngine.handleAdminAction(payload, room.transport);
+      const action = typeof payload === "string" ? payload : payload?.action;
+      if (action === "lobby") { room.showLeaderboard = false; room.transport.emit("leaderboard_toggle", false); }
+      if (["lobby", "next", "next_question", "next_image", "next_hint", "next_round", "slf_next_round", "correct"].includes(action)) room.clearTimer(true);
     });
-    adminHandler(socket, "admin_pause_timer", () => {
-      if (!timerInterval) return;
-      timerRemaining = Math.max(0, Math.ceil((timerDeadline - Date.now()) / 1000));
-      clearGameTimer();
-      io.emit("timer_update", timerRemaining);
+    adminHandler(socket, "admin_toggle_leaderboard", (room, state) => {
+      room.showLeaderboard = Boolean(state);
+      room.transport.emit("leaderboard_toggle", room.showLeaderboard);
     });
-    adminHandler(socket, "admin_resume_timer", () => {
-      if (timerInterval || timerRemaining === null || timerRemaining <= 0) return;
-      runTimer();
-    });
-    adminHandler(socket, "admin_stop_timer", () => clearGameTimer(true));
+    adminHandler(socket, "admin_start_timer", (room, seconds) => room.startTimer(seconds));
+    adminHandler(socket, "admin_pause_timer", room => room.pauseTimer());
+    adminHandler(socket, "admin_resume_timer", room => room.resumeTimer());
+    adminHandler(socket, "admin_stop_timer", room => room.clearTimer(true));
   });
 
   async function close() {
-    clearGameTimer();
-    gameEngine.disposeMode();
-    for (const timer of disconnectTimers.values()) clearTimeout(timer);
+    closing = true;
+    clearInterval(cleanupInterval);
+    for (const room of rooms.values()) room.dispose();
     await new Promise(resolve => io.close(resolve));
-    // Socket.IO disconnect callbacks may have scheduled new reconnect timers.
-    for (const timer of disconnectTimers.values()) clearTimeout(timer);
-    disconnectTimers.clear();
+    rooms.clear();
   }
-  return { app, server, io, gameEngine, close };
+  return { app, server, io, getRoom, close };
 }
 
 if (require.main === module) {

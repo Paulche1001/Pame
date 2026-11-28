@@ -28,7 +28,7 @@ export default function ImposterPlayer({ gameState, socket, playerId }) {
     const youAreKicked = kicked?.includes(currentPlayer?.name);
 
     return (
-        <div className="flex flex-col py-5 items-center w-full max-w-3xl mx-auto justify-center min-h-[50vh] px-4">
+        <div className="round-content">
 
             {screen === "imposter_screen" && (
                 <div className="w-full max-w-2xl mx-auto">
@@ -117,7 +117,7 @@ export default function ImposterPlayer({ gameState, socket, playerId }) {
                                                     </span>
                                                 </span>
                                                 {!youAreKicked && (
-                                                    <input
+                                                    <input aria-label={name}
                                                         type="radio"
                                                         name="player"
                                                         checked={selectedPlayers?.[currentPlayer?.name] === name}
@@ -155,7 +155,7 @@ export default function ImposterPlayer({ gameState, socket, playerId }) {
             {problemMessage ? (
                 <h2 className="text-pink-600 text-2xl">{problemMessage}!</h2>
             ) : (
-                <h2 className="text-pink-600 text-2xl invisible">Hahahaha</h2>
+                null
             )}
 
             {/*

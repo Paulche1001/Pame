@@ -10,17 +10,15 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
 
 
   return (
-    <div className="flex flex-col items-center p-6 gap-6">
-      <h1 className="text-3xl font-bold text-pink-600">
-        Pixel Mode – {title}
-      </h1>
+    <div className="round-content">
+      <p className="answer-preview">Gesuchtes Motiv: <strong>{title}</strong></p>
       <div className="flex gap-4">
         { imageStep == 3 && (
           <button
             onClick={() => toggleLeaderboard(true)}
-            className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg font-bold"
+            className="btn btn-secondary"
           >
-            Leaderboard
+            Rangliste
           </button>
         )}
 
@@ -28,7 +26,7 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
         <div className="flex items-center justify-center">
           {timer === null ? (
             <button
-              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-bold"
+              className="btn btn-success"
               onClick={() => {
                 const seconds = 5;
                 if (seconds > 0) {
@@ -54,7 +52,7 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
               socket.emit("admin_action", { action: "lobby" });
             }
           }}
-          className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-lg font-bold"
+          className="btn btn-danger"
         >
           Verlassen
         </button>
@@ -74,7 +72,7 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
       {imageStep < 3 && (
         <button
           onClick={() => socket.emit("admin_action", "next_image")}
-          className="bg-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-700 text-white"
+          className="btn btn-game"
         >
           🔍 Nächstes Pixel-Level
         </button>
@@ -82,7 +80,7 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
       {imageStep == 3 && (
         <button
           onClick={() => socket.emit("admin_action", "next_image")}
-          className="bg-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-700 text-white"
+          className="btn btn-game"
         >
           Nächstes Bild
         </button>
@@ -97,14 +95,14 @@ export default function PixelAdmin({ gameState, socket, toggleLeaderboard, timer
           <div className="flex gap-4 justify-center">
             <button
               onClick={() => socket.emit("admin_action", "correct")}
-              className="bg-green-600 px-6 py-3 rounded-xl"
+              className="btn btn-success"
             >
               ✔ Richtig
             </button>
 
             <button
               onClick={() => socket.emit("admin_action", "wrong")}
-              className="bg-red-600 px-6 py-3 rounded-xl"
+              className="btn btn-danger"
             >
               ✘ Falsch
             </button>

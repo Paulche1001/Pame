@@ -3,26 +3,19 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
 
   const { hintStep, buzzedPlayer, blockedPlayers } = gameState;
 
-  const titleMap = {
-    whois_emojis: "Wer wird gesucht? (Emojis)",
-    guessthebeer: "Guess The Beer 🍺",
-  };
 
-  const headline = titleMap[gameState.variant] || "Wer wird gesucht?";
 
   return (
-    <div className="flex flex-col items-center p-6 gap-6">
-        <h1 className="text-3xl font-bold text-pink-600 text-center">
-            {headline}
-        </h1>
+    <div className="round-content">
+
 
         <div className="flex gap-4">
             { hintStep == 4 && (
             <button
                 onClick={() => toggleLeaderboard(true)}
-                className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg font-bold"
+                className="btn btn-secondary"
             >
-                Leaderboard
+                Rangliste
             </button>
             )}
             <button
@@ -34,7 +27,7 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
                 socket.emit("admin_action", { action: "lobby" });
                 }
             }}
-            className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-lg font-bold"
+            className="btn btn-danger"
             >
             Verlassen
             </button>
@@ -67,7 +60,7 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
       {hintStep < 3 && (
         <button
           onClick={() => socket.emit("admin_action", "next_hint")}
-          className="bg-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-700 text-white"
+          className="btn btn-game"
         >
           🔍 Nächster Hinweis
         </button>
@@ -75,7 +68,7 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
       {hintStep == 3 && (
         <button
           onClick={() => socket.emit("admin_action", "next_hint")}
-          className="bg-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-700 text-white"
+          className="btn btn-game"
         >
           Auflösen
         </button>
@@ -83,7 +76,7 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
       {hintStep == 4 && (
         <button
           onClick={() => socket.emit("admin_action", "next_hint")}
-          className="bg-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-700 text-white"
+          className="btn btn-game"
         >
           Nächste Person
         </button>
@@ -98,14 +91,14 @@ export default function WhoIsAdmin({ gameState, socket, toggleLeaderboard}) {
           <div className="flex gap-4 justify-center">
             <button
               onClick={() => socket.emit("admin_action", "correct")}
-              className="bg-green-600 px-6 py-3 rounded-xl"
+              className="btn btn-success"
             >
               ✔ Richtig
             </button>
 
             <button
               onClick={() => socket.emit("admin_action", "wrong")}
-              className="bg-red-600 px-6 py-3 rounded-xl"
+              className="btn btn-danger"
             >
               ✘ Falsch
             </button>

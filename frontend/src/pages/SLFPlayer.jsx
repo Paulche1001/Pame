@@ -61,8 +61,8 @@ export default function SLFPlayer({ gameState, socket, playerId }) {
     };
 
     return (
-      <div className="p-4 text-center flex flex-col justify-center min-h-[50vh] gap-4 items-center">
-        <h1 className="text-2xl font-bold">Stadt–Land–Fluss</h1>
+      <div className="round-content">
+
         <p className="text-gray-300 font-semibold">Auswertung läuft…</p>
 
         <div className="w-full max-w-md bg-gray-800 rounded-xl p-4 text-left">
@@ -101,7 +101,7 @@ export default function SLFPlayer({ gameState, socket, playerId }) {
         </div>
 
         <p className="text-gray-500 text-sm">
-          Admin klickt gerade durch die Kategorien – du siehst die Bewertung live.
+          Der Spielleiter wertet die Kategorien aus. Du siehst die Bewertung live.
         </p>
       </div>
     );
@@ -111,8 +111,8 @@ export default function SLFPlayer({ gameState, socket, playerId }) {
   // INPUT SCREEN
   // =========================
   return (
-    <div className="p-4 text-center flex flex-col gap-4 min-h-[50vh] items-center">
-      <h1 className="text-2xl font-bold">Stadt–Land–Fluss</h1>
+    <div className="round-content">
+
       <p className="text-xl">
         Buchstabe: <span className="text-yellow-400 font-extrabold">{letter}</span>
       </p>
@@ -125,7 +125,7 @@ export default function SLFPlayer({ gameState, socket, playerId }) {
         {categories.map((cat) => (
           <div key={cat} className="w-full bg-gray-800 rounded-xl p-3 text-left">
             <p className="font-bold mb-2">{cat}</p>
-            <input
+            <input aria-label={cat}
               value={localAnswers[cat] ?? ""}
               disabled={locked || iAmFinished}
               onChange={(e) => onChange(cat, e.target.value)}
@@ -138,7 +138,7 @@ export default function SLFPlayer({ gameState, socket, playerId }) {
 
       {!locked && !iAmFinished ? (
         <button
-          className="bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-lg font-bold w-full"
+          className="btn btn-game"
           onClick={() => {
             socket.emit("player_action", {
               action: "slf_finish",

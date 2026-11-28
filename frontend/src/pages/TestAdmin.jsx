@@ -16,7 +16,7 @@ export default function TestAdmin({ gameState, socket }) {
     }, [messages]);
 
     return (
-        <div className="p-6 text-white flex flex-col gap-6 items-start">
+        <div className="round-content">
             <div className="w-full flex justify-end">
                 <button
                     onClick={() => {
@@ -27,10 +27,8 @@ export default function TestAdmin({ gameState, socket }) {
                         socket.emit("admin_action", { action: "lobby" });
                         }
                     }}
-                    className="text-red-600 hover:bg-white px-2 py-2 rounded-lg font-bold"
-                    >
-                    X
-                </button>
+                    className="btn btn-game"
+                    >Verlassen</button>
             </div>
 
             {list.length === 0 ? (
@@ -49,17 +47,17 @@ export default function TestAdmin({ gameState, socket }) {
                 </div>
             )}
 
-            <div className="w-full flex justify-center rounded-2xl bg-white p-2">
-                <input
-                    className="bg-white w-full text-black caret-pink-600 px-2 py-1 outline-none focus:outline-none focus:ring-0 focus:border-transparent"
+            <div className="field-row">
+                <input aria-label="Nachricht"
+                    className="w-full"
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Nachricht"
                 />
                 <button
-                    className="bg-pink-600 w-10 h-10"
-                    style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
+                    className="btn btn-game"
+
                     onClick={() => {
                         socket.emit("admin_action", {
                             action: "send_message",
@@ -67,8 +65,7 @@ export default function TestAdmin({ gameState, socket }) {
                         })
                         setInput("");
                     }}
-                >
-                </button>
+                >Senden</button>
             </div>
 
         </div>

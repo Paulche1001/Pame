@@ -9,12 +9,7 @@ export default function WhoIsPlayer({ gameState, socket, playerId }) {
   const someoneBuzzed = !!buzzedPlayer;
   const iAmBuzzed = buzzedPlayer?.id === playerId;
 
-  const titleMap = {
-    whois_emojis: "Wer wird gesucht? (Emojis)",
-    guessthebeer: "Guess The Beer 🍺",
-    };
 
-    const headline = titleMap[gameState.variant] || "Wer wird gesucht?";
 
 
 
@@ -31,11 +26,9 @@ export default function WhoIsPlayer({ gameState, socket, playerId }) {
 
   };
     return (
-        <div className="w-full flex flex-col justify-center min-h-[50vh] items-center mt-6">
+        <div className="round-content">
 
-            <h1 className="text-3xl font-bold text-pink-600 text-center">
-                {headline}
-            </h1>
+
 
             {gameState.hints && (
             <div >
@@ -73,7 +66,7 @@ export default function WhoIsPlayer({ gameState, socket, playerId }) {
             {!someoneBuzzed && !iAmBlocked && hintStep < 4 && (
                 <button
                 onClick={handleBuzz}
-                className="bg-pink-600 text-white py-3 px-6 rounded-xl text-xl font-bold shadow-lg"
+                className="btn btn-game"
                 >
                 BUZZ!
                 </button>

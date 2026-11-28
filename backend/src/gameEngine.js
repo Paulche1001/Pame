@@ -18,7 +18,7 @@ const whoIsSets = {
   guessthebeer: require("./questions/guessTheBeer.json"),
 };
 
-function createGameEngine() {
+function createGameEngine({ roomCode = null } = {}) {
   let currentMode = null;
   let players = [];
   let ioRef = null;
@@ -85,8 +85,9 @@ function createGameEngine() {
       const state = currentMode?.getState(viewer) || { screen: "lobby", mode: null };
       return {
         screen: "game", ...state,
+        roomCode,
         gameId,
-        roundKey: `${gameId}:${currentMode?.currentIndex ?? 0}:${currentMode?.round ?? 0}:${currentMode?.letter ?? ""}`,
+        roundKey: `${roomCode || ""}:${gameId}:${currentMode?.currentIndex ?? 0}:${currentMode?.round ?? 0}:${currentMode?.letter ?? ""}`,
         mode: state.mode ?? (state.screen === "end" || !currentMode ? null : activeModeName),
         players: publicPlayers(players),
         buzzedPlayer: state.buzzedPlayer ? publicPlayers([state.buzzedPlayer])[0] : null,
